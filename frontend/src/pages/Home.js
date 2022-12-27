@@ -9,7 +9,7 @@ function Home() {
       <h2>Sign up or Log in to get started</h2>
 
       {/* <img width="400" src="https://media2.giphy.com/media/fAD9SMlNWp0k84Ra1G/giphy.gif?cid=790b7611d3fec240996c139a98fa99ad753b3ea083818e0e&rid=giphy.gif&ct=g"></img>   */}
-      <img src='https://cdn.dribbble.com/users/989157/screenshots/3825479/comp-4_1.gif' />
+      {/* <img src='https://cdn.dribbble.com/users/989157/screenshots/3825479/comp-4_1.gif' /> */}
     </div>
   )
 }

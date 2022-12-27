@@ -31,7 +31,7 @@ function SearchBar() {
   }
 
   return (
-    <div>
+    <div className='search-bar'>
       <input
         input='text'
         onChange={inputHandler}

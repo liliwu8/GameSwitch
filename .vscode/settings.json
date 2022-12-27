@@ -1,0 +1,5 @@
+{
+    "prettier.withNodeModules": false,
+    "editor.formatOnSave": true,
+    "prettier.requireConfig": false
+}

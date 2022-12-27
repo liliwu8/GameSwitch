@@ -1,8 +1,12 @@
 .nav-bar {
-  justify-content: space-between;
-  background-color: #251d52;
+ background-color: #251d52;
   /* height: 90px; */
-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+  /* width: 20rem; */
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.nav {
+  margin-left: auto;
 }
 
 .logo {
@@ -40,3 +44,7 @@ div .button a {
   transform: translateY(5px);
   box-shadow: none;
 }
+
+/* .navbar-collapse {
+
+} */

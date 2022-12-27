@@ -9,6 +9,7 @@
   overflow: hidden;
   overflow-y: auto;
   border-radius: 7px;
+  margin-left: 24rem;
 }
 
 .dropdown::-webkit-scrollbar {
@@ -40,3 +41,23 @@
 a {
   text-decoration: none;
 }
+
+.search-bar {
+  flex: 1;
+}
+
+@media (max-width: 500px) {
+  .dropdown {
+    margin-left: 6rem;
+  }
+
+}
+
+
+@media (max-width: 390px) {
+  .dropdown {
+    margin-left: 3.1rem;
+  }
+
+}
+
