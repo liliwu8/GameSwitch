@@ -58,7 +58,7 @@ function GameDetail() {
 
   return (
     <div>
-      <Container fluid className="mt-4">
+      <Container fluid>
         <Row>
           <Col>
             <img
@@ -68,7 +68,7 @@ function GameDetail() {
               height={500}
             />
           </Col>
-          <Col>
+          <Col  md="auto">
             <div className="game-detail">
               <h2>{game.game_name}</h2>
               <p className="description">

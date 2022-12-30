@@ -46,18 +46,32 @@ a {
   flex: 1;
 }
 
+@media (max-width: 1100px) {
+  .dropdown {
+    margin-left: 12rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .dropdown {
+    margin-left: 16rem;
+  }
+}
+
 @media (max-width: 500px) {
   .dropdown {
     margin-left: 6rem;
   }
-
 }
-
 
 @media (max-width: 390px) {
   .dropdown {
     margin-left: 3.1rem;
   }
-
 }
 
+@media (max-width: 390px) {
+  .dropdown {
+    margin-left: 3rem;
+  }
+}

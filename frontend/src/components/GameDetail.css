@@ -7,22 +7,6 @@
 }
 
 .game-detail-button {
-  /* background-image: linear-gradient(
-    to right,
-    #4776e6 0%,
-    #8e54e9 51%,
-    #4776e6 100%
-  );
-  transition: 0.5s;
-  font-weight: bold;
-  border-radius: 8px;
-  color: #fff;
-  box-shadow: 0 0 20px #eee;
-  border: none;
-  font-size: 1.1rem;
-  margin-top: 9px;
-  background-size: 200% auto;
-  display: block; */
   background-color: #654aeb;
   font-weight: bold;
   border-radius: 8px;

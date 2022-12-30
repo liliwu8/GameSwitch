@@ -16,10 +16,10 @@ function NavBar() {
       <Link to='/'>
         <img src={logo} alt='logo' className='logo' />
       </Link>
-      <Navbar.Toggle />
+       <Navbar.Toggle />
       <Navbar.Collapse id='navbarScroll'>
         <SearchBar />
-
+      
         <div className='nav'>
           <button className='button'>
             <Link to='/users'>Users</Link>

@@ -1,5 +1,7 @@
-import React from 'react'
-import './Home.css'
+import React from 'react';
+import './Home.css';
+import hand from './hand.png';
+import videoGame from './videogame.png'
 function Home() {
   return (
     <div className='home'>
@@ -10,7 +12,10 @@ function Home() {
 
       {/* <img width="400" src="https://media2.giphy.com/media/fAD9SMlNWp0k84Ra1G/giphy.gif?cid=790b7611d3fec240996c139a98fa99ad753b3ea083818e0e&rid=giphy.gif&ct=g"></img>   */}
       {/* <img src='https://cdn.dribbble.com/users/989157/screenshots/3825479/comp-4_1.gif' /> */}
+      {/* <div className='circle'></div>
+      <img src={hand} alt='hand' className='hand-img' />
+      <img src={ videoGame} alt='videogame' className='video-game'/>       */}
     </div>
-  )
+  );
 }
-export default Home
+export default Home;

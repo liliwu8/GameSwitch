@@ -1,11 +1,11 @@
-import axios from "axios";
-import "./User.css";
-import { Card, Container, Image } from "react-bootstrap";
-import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { CurrentUserContext } from "./CurrentUserContext";
-import { useContext } from "react";
-import GetTradeScore from "../tradeRequestRecords/getTradeScore";
+import axios from 'axios';
+import './User.css';
+import { Card, Container, Image } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { CurrentUserContext } from './CurrentUserContext';
+import { useContext } from 'react';
+import GetTradeScore from '../tradeRequestRecords/getTradeScore';
 const API = process.env.REACT_APP_API_URL;
 
 function User() {
@@ -36,10 +36,10 @@ function User() {
 
   const showUserGames = userGames.map((game, idx) => {
     return (
-      <Card key={idx} className="gameCard">
+      <Card key={idx} className='gameCard'>
         <Link to={`/games/${game.game_id}`}>
           <Card.Img
-            className="usergameImage"
+            className='usergameImage'
             src={game.game_img}
             alt={game.game_name}
           />
@@ -51,8 +51,6 @@ function User() {
       </Card>
     );
   });
-  // console.log(user);
-  // console.log(currentUser);
 
   const displaySocialMediaIcons = () => {
     if (currentUser.user_name) {
@@ -61,40 +59,41 @@ function User() {
           {user.user_facebook ? (
             <a href={user.user_facebook}>
               <Image
-                style={{ width: "50px", margin: "10px" }}
-                src="https://i.imgur.com/YeiuX4k.png"
+                style={{ width: '50px', margin: '10px' }}
+                src='https://i.imgur.com/YeiuX4k.png'
               />
             </a>
           ) : null}
           {user.user_instagram ? (
             <a href={user.user_instagram}>
               <Image
-                style={{ width: "50px", margin: "10px" }}
-                src="https://i.imgur.com/dTKYTwR.png"
+                style={{ width: '50px', margin: '10px' }}
+                src='https://i.imgur.com/dTKYTwR.png'
               />
             </a>
           ) : null}
           {user.user_twitch ? (
             <a href={user.user_twitch}>
               <Image
-                style={{ width: "50px", margin: "10px" }}
-                src="https://i.imgur.com/pSgUF1Y.jpg"
+                style={{ width: '50px', margin: '10px' }}
+                src='https://i.imgur.com/pSgUF1Y.jpg'
               />
             </a>
           ) : null}
         </div>
       );
     } else {
-      return <Link to="/signup">Sign up or Log in to view Email and Social media</Link>;
+      return (
+        <Link to='/signup'>
+          Sign up or Log in to view Email and Social media
+        </Link>
+      );
     }
   };
 
-  //console.log(displaySocialMediaIcons())
-  console.log("user_id is", user.user_id);
-
   return (
-    <Container className="userPage">
-      <Card style={{ width: "27rem" }} className='user-cards'>
+    <Container className='userPage'>
+      <Card className='user-cards'>
         <Card.Img src={user.user_avatar} />
         <Card.Body>
           <Card.Title>{user.user_name}</Card.Title>
@@ -108,11 +107,13 @@ function User() {
           <hr></hr>
           <Card.Subtitle>{user.user_name}'s Contact info:</Card.Subtitle>
           <br></br>
-          {currentUser.user_name ? (<Card.Subtitle>{user.user_email}</Card.Subtitle>): null}
-          
+          {currentUser.user_name ? (
+            <Card.Subtitle>{user.user_email}</Card.Subtitle>
+          ) : null}
+
           {displaySocialMediaIcons()}
           <br></br>
-          <button className="user-button" onClick={showGamesHandler}>
+          <button className='user-button' onClick={showGamesHandler}>
             {!gamesVisible
               ? `${user.user_name}'s Games`
               : `Hide ${user.user_name}'s Games`}
@@ -120,7 +121,7 @@ function User() {
         </Card.Body>
       </Card>
 
-      <div className="userGames">{gamesVisible ? showUserGames : null}</div>
+      <div className='userGames'>{gamesVisible ? showUserGames : null}</div>
     </Container>
   );
 }
