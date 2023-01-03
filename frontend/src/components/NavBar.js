@@ -12,14 +12,12 @@ function NavBar() {
 
   return (
     <Navbar className='nav-bar' sticky='top' expand='lg'>
-      {/* <Container fluid> */}
       <Link to='/'>
         <img src={logo} alt='logo' className='logo' />
       </Link>
-       <Navbar.Toggle />
+      <Navbar.Toggle />
       <Navbar.Collapse id='navbarScroll'>
         <SearchBar />
-      
         <div className='nav'>
           <button className='button'>
             <Link to='/users'>Users</Link>
@@ -45,7 +43,6 @@ function NavBar() {
           )}
         </div>
       </Navbar.Collapse>
-      {/* </Container> */}
     </Navbar>
   );
 }

@@ -1,9 +1,72 @@
 .biocard {
-  margin: 10px;
+  margin: 1rem;
 }
 
 .about-font {
   font-family: 'Press Start 2P';
   font-size: 2rem;
   margin-bottom: 1.5rem;
+}
+
+.about-img{
+  margin-top: 1rem;
+  width: 16rem;
+  margin-left: 1.5rem;
+}
+
+
+@media (max-width:1180px) {
+  .about-img{
+  margin-top: 1rem;
+  width: 16rem;
+  margin-left: 9rem;
+}
+}
+
+@media (max-width:912px) {
+  .about-img{
+  margin-top: 1rem;
+  width: 16rem;
+  margin-left: 5rem;
+}
+}
+
+@media (max-width:768px) {
+  .about-img{
+  margin-top: 1rem;
+  width: 16rem;
+  margin-left: 1rem;
+}
+}
+
+@media (max-width:414px) {
+  .about-img{
+  margin-top: 1rem;
+  width: 16rem;
+  margin-left: 3rem;
+}
+}
+
+@media (max-width:844px) {
+  .about-img{
+  margin-top: 1rem;
+  width: 16rem;
+  margin-left: 3rem;
+}
+}
+
+@media (max-width:390px) {
+  .about-img{
+  margin-top: 1rem;
+  width: 16rem;
+  margin-left: 2.5rem;
+}
+}
+
+@media (max-width:360px) {
+  .about-img{
+  margin-top: 1rem;
+  width: 16rem;
+  margin-left: 1.5rem;
+}
 }

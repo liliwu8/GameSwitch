@@ -19,3 +19,7 @@
 .game-detail-button:hover {
   background-color: #5383ec;
 }
+
+.game{
+  margin-top: 2rem;
+}

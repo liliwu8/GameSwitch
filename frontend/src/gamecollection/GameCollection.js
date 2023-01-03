@@ -63,7 +63,6 @@ export default function GameCollection() {
       </Card>
     )
   })
-  console.log(games)
   return (
     <Container>
       <Link to='/addnewgame'>

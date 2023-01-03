@@ -57,7 +57,7 @@ function GameDetail() {
   const handleClose = () => setShow(false);
 
   return (
-    <div>
+    <div className='game'>
       <Container fluid>
         <Row>
           <Col>
@@ -68,7 +68,7 @@ function GameDetail() {
               height={500}
             />
           </Col>
-          <Col  md="auto">
+          <Col sm>
             <div className="game-detail">
               <h2>{game.game_name}</h2>
               <p className="description">
