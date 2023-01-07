@@ -20,8 +20,8 @@ GameSwitch NYC has a user-friendly interface.  Making an account allows you to b
 
 🕹️ [ERD](https://miro.com/welcomeonboard/elN5aFYxVzhYdVI5VEpPTVVvWjNJMUVkM0N6MGpMaWd3NkJVWGNQMUNBT2NGTVIxcUllYzRaRGJIcUUxT3FPbHwzNDU4NzY0NTE2MDUzODU0MDU1fDI=?share_link_id=45931369474)
 
-<!-- ## Sign In
-(https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4) -->
+## Sign In 
+[https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4](https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4)
 
 
 ## Local Setup
