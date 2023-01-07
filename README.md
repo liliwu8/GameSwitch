@@ -14,10 +14,16 @@ GameSwitch NYC has a user-friendly interface.  Making an account allows you to b
 [https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4](https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4) -->
 
 <!-- 
-## Your Profile Game Collection
-[https://user-images.githubusercontent.com/96275694/211171224-52fab3d4-f9d7-4e0a-bc3b-c325db06d336.mp4](https://user-images.githubusercontent.com/96275694/211171224-52fab3d4-f9d7-4e0a-bc3b-c325db06d336.mp4) -->
+## Add,Update,Delete Your Game Collection
+[]() -->
 
+<!-- ## Check Users From Different Borough
+[https://user-images.githubusercontent.com/96275694/211171522-f55b3c9d-9106-4644-b76b-37783bd0489e.mp4](https://user-images.githubusercontent.com/96275694/211171522-f55b3c9d-9106-4644-b76b-37783bd0489e.mp4) -->
 
+<!-- ## Trade With Users
+[https://user-images.githubusercontent.com/96275694/211171651-5c690642-2e2e-41df-9f4c-c488fa04f518.mp4](https://user-images.githubusercontent.com/96275694/211171651-5c690642-2e2e-41df-9f4c-c488fa04f518.mp4) -->
+
+()
 
 ## Important Links
 
