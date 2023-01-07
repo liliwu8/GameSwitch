@@ -7,6 +7,17 @@ Game Switch is a platform for gamers to interact with local peers by trading vid
 
 GameSwitch NYC has a user-friendly interface.  Making an account allows you to build a profile and game collection. Our users page allows you to find and sort users by location and view their collections. See a game you like? Make a trade offer! Manage your trade offers and Watch your game collections update instantly after completing trades. Build a reputation and watch your Game Switch score increase with every trade you make!
 
+<!-- ## Create An Account
+[https://user-images.githubusercontent.com/96275694/211171194-b41d2650-9d04-4adc-92ab-286c7a593091.mp4](https://user-images.githubusercontent.com/96275694/211171194-b41d2650-9d04-4adc-92ab-286c7a593091.mp4) -->
+
+<!-- ## Sign In 
+[https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4](https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4) -->
+
+<!-- 
+## Your Profile Game Collection
+[https://user-images.githubusercontent.com/96275694/211171224-52fab3d4-f9d7-4e0a-bc3b-c325db06d336.mp4](https://user-images.githubusercontent.com/96275694/211171224-52fab3d4-f9d7-4e0a-bc3b-c325db06d336.mp4) -->
+
+
 
 ## Important Links
 
@@ -19,10 +30,6 @@ GameSwitch NYC has a user-friendly interface.  Making an account allows you to b
 🕹️ [Wireframe](https://wireframe.cc/8CnMSP)
 
 🕹️ [ERD](https://miro.com/welcomeonboard/elN5aFYxVzhYdVI5VEpPTVVvWjNJMUVkM0N6MGpMaWd3NkJVWGNQMUNBT2NGTVIxcUllYzRaRGJIcUUxT3FPbHwzNDU4NzY0NTE2MDUzODU0MDU1fDI=?share_link_id=45931369474)
-
-## Sign In 
-[https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4](https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4)
-
 
 ## Local Setup
 
