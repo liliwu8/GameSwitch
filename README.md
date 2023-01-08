@@ -7,23 +7,23 @@ Game Switch is a platform for gamers to interact with local peers by trading vid
 
 GameSwitch NYC has a user-friendly interface.  Making an account allows you to build a profile and game collection. Our users page allows you to find and sort users by location and view their collections. See a game you like? Make a trade offer! Manage your trade offers and Watch your game collections update instantly after completing trades. Build a reputation and watch your Game Switch score increase with every trade you make!
 
-<!-- ## Create An Account
-[https://user-images.githubusercontent.com/96275694/211171194-b41d2650-9d04-4adc-92ab-286c7a593091.mp4](https://user-images.githubusercontent.com/96275694/211171194-b41d2650-9d04-4adc-92ab-286c7a593091.mp4) -->
 
-<!-- ## Sign In 
-[https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4](https://user-images.githubusercontent.com/96275694/211170902-d8a896c3-887b-41f4-8ec8-84e28aa42734.mp4) -->
 
-<!-- 
-## Add,Update,Delete Your Game Collection
-[]() -->
+<!-- ## Create An Account And Sign In
+[https://user-images.githubusercontent.com/96275694/211174829-aac51433-c1df-420d-b456-07b870989aec.mp4](https://user-images.githubusercontent.com/96275694/211174829-aac51433-c1df-420d-b456-07b870989aec.mp4) -->
 
-<!-- ## Check Users From Different Borough
-[https://user-images.githubusercontent.com/96275694/211171522-f55b3c9d-9106-4644-b76b-37783bd0489e.mp4](https://user-images.githubusercontent.com/96275694/211171522-f55b3c9d-9106-4644-b76b-37783bd0489e.mp4) -->
+<!--  ## Add,Update,Delete Your Game Collection
+[https://user-images.githubusercontent.com/96275694/211174682-88ff6d0b-ea2c-4d6c-9f42-9e3a87cc9aca.mp4](https://user-images.githubusercontent.com/96275694/211174682-88ff6d0b-ea2c-4d6c-9f42-9e3a87cc9aca.mp4)  -->
+
+
+<!--  ## Check Users From Different Borough
+[https://user-images.githubusercontent.com/96275694/211174913-5123ab32-a23e-4dc4-a91c-2c1a01438f9b.mp4
+](https://user-images.githubusercontent.com/96275694/211174913-5123ab32-a23e-4dc4-a91c-2c1a01438f9b.mp4
+) -->
 
 <!-- ## Trade With Users
-[https://user-images.githubusercontent.com/96275694/211171651-5c690642-2e2e-41df-9f4c-c488fa04f518.mp4](https://user-images.githubusercontent.com/96275694/211171651-5c690642-2e2e-41df-9f4c-c488fa04f518.mp4) -->
+[https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4](https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4) -->
 
-()
 
 ## Important Links
 
@@ -85,6 +85,7 @@ touch .env
 
 PORT=3333
 PG_HOST=localhost
+
 PG_PORT=5432
 PG_DATABASE=game_switch
 
