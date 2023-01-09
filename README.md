@@ -8,6 +8,23 @@ Game Switch is a platform for gamers to interact with local peers by trading vid
 GameSwitch NYC has a user-friendly interface.  Making an account allows you to build a profile and game collection. Our users page allows you to find and sort users by location and view their collections. See a game you like? Make a trade offer! Manage your trade offers and Watch your game collections update instantly after completing trades. Build a reputation and watch your Game Switch score increase with every trade you make!
 
 
+
+<!-- ## Create An Account And Sign In
+[https://user-images.githubusercontent.com/96275694/211174829-aac51433-c1df-420d-b456-07b870989aec.mp4](https://user-images.githubusercontent.com/96275694/211174829-aac51433-c1df-420d-b456-07b870989aec.mp4) -->
+
+<!--  ## Add,Update,Delete Your Game Collection
+[https://user-images.githubusercontent.com/96275694/211174682-88ff6d0b-ea2c-4d6c-9f42-9e3a87cc9aca.mp4](https://user-images.githubusercontent.com/96275694/211174682-88ff6d0b-ea2c-4d6c-9f42-9e3a87cc9aca.mp4)  -->
+
+
+<!--  ## Check Users From Different Borough
+[https://user-images.githubusercontent.com/96275694/211174913-5123ab32-a23e-4dc4-a91c-2c1a01438f9b.mp4
+](https://user-images.githubusercontent.com/96275694/211174913-5123ab32-a23e-4dc4-a91c-2c1a01438f9b.mp4
+) -->
+
+<!-- ## Trade With Users
+[https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4](https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4) -->
+
+
 ## Important Links
 
 🕹️ [Deployed Frontend](https://game-switch-nyc.netlify.app/)
@@ -68,6 +85,7 @@ touch .env
 
 PORT=3333
 PG_HOST=localhost
+
 PG_PORT=5432
 PG_DATABASE=game_switch
 
