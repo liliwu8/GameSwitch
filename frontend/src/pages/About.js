@@ -9,7 +9,7 @@ function About() {
       <br></br>
       <h1 className='about-font'>Meet The GameSwitch Team</h1>
       <Row>
-        <Col>
+        <Col md={3} >
           <Card className='biocard'>
             <Card.Img
               variant='top'
@@ -45,7 +45,7 @@ function About() {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col md={3}>
           <Card className='biocard'>
             <Card.Img
               variant='top'
@@ -81,7 +81,7 @@ function About() {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col md={3}>
           <Card className='biocard'>
             <Card.Img
               variant='top'
@@ -118,7 +118,7 @@ function About() {
             </Card.Body>
           </Card>
         </Col>
-        <Col>
+        <Col md={3}>
           <Card className='biocard'>
             <Card.Img
               variant='top'

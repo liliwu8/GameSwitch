@@ -1,4 +1,4 @@
-.update-game-form {
+.add-game {
   margin-top: 2%;
   z-index: 1;
   background: #ffffff;
@@ -6,15 +6,14 @@
   margin: 10px auto 100px;
   padding: 45px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  
 }
 
-.input{
-   text-align: left;
+.input-add {
+  text-align: left;
 }
 
-.update-button{
-background-color: #1657f3;
+.add-game-button {
+  background-color: #1657f3;
   font-weight: bold;
   border-radius: 8px;
   color: #fff;
@@ -23,14 +22,7 @@ background-color: #1657f3;
   margin-top: 9px;
 }
 
-.update-button:hover{
-     background-color: #477beb;
+.add-game-button:hover{
+    background-color:#654AEB ;
 }
 
-.add-game-button a {
-  color: white;
-}
-
-.update-button a {
-  color: white;
-}

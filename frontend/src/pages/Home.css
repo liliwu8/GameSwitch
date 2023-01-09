@@ -32,46 +32,6 @@
   top: 0.2em;
 }
 
-.video-game {
-  margin-top: 2rem;
-  -webkit-animation: mover 2s infinite alternate;
-  animation: mover 2s infinite alternate;
- 
-  position: absolute;
-  top: 10rem;
-  right: 32rem;
-  transform: perspective(600px) translate3d(3.9307px, 0px, 0px);
-}
-@-webkit-keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
-}
-@keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
-}
-
-.circle {
-  margin-top: 2rem;
-  position: relative;
-  height: 25rem;
-  width: 25rem;
-
-  border-radius: 50%;
-  margin-left: 29rem;
-  background: linear-gradient(90deg, #e352c6, #8619f5);
-}
-
-.hand-img{
-  position:absolute;
-  top: 3rem;
-  left: 28rem;
-}
+/* .feature {
+  border: 3px solid black;
+} */
