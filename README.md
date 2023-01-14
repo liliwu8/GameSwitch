@@ -29,7 +29,7 @@ GameSwitch NYC has a user-friendly interface.  Making an account allows you to b
 
 🕹️ [Deployed Frontend](https://game-switch-nyc.netlify.app/)
 
-🕹️ [Deployed Backend](https://latest-gameswitch.onrender.com)
+🕹️ [Deployed Backend](https://game-switch-ny.netlify.app)
 
 🕹️ [Trello](https://trello.com/b/Zu5DpOyo/capstone-group-1-video-game-exchange)
 
@@ -106,6 +106,6 @@ nodemon server.js
 
 🎰 [Luis Ortiz](https://github.com/Lortiz528)
 
-🎰 [Lili Wu](https://github.com/liliwu8)
+🎰 [Li Li Wu](https://github.com/liliwu8)
 
 🎰 [Pratima Roy](https://github.com/PratimaRoy)
