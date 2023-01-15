@@ -27,9 +27,9 @@ GameSwitch NYC has a user-friendly interface.  Making an account allows you to b
 
 ## Important Links
 
-🕹️ [Deployed Frontend](https://game-switch-nyc.netlify.app/)
+🕹️ [Deployed Frontend](https://game-switch-ny.netlify.app)
 
-🕹️ [Deployed Backend](https://game-switch-ny.netlify.app)
+🕹️ [Deployed Backend](https://game-switch-nyc.adaptable.app)
 
 🕹️ [Trello](https://trello.com/b/Zu5DpOyo/capstone-group-1-video-game-exchange)
 
