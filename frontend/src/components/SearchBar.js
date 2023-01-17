@@ -56,7 +56,8 @@ function SearchBar() {
                   </li>
                 </ul>
               ))
-          : null}
+          : null}{
+          }
       </div>
     </div>
   )
