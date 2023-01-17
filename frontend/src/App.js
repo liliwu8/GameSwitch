@@ -57,6 +57,7 @@ function App() {
         </main>
       </CurrentUserContext.Provider>
       <Footer />
+      <p>hello</p>
     </div>
   );
 }
