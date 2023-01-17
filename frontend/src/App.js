@@ -57,7 +57,6 @@ function App() {
         </main>
       </CurrentUserContext.Provider>
       <Footer />
-      <p>yes</p>
     </div>
   );
 }
