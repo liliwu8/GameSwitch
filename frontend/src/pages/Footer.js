@@ -1,42 +1,31 @@
 import React from 'react';
-import { MDBFooter, MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
-import logo from '../components/logo.png';
 import { Link } from 'react-router-dom';
-
-//we can remove this MDB package and style it how we like** turn links into cool buttons
+import './Footer.css';
 
 export default function Footer() {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
-      <section>
-        <MDBContainer className="text-center text-md-start mt-5">
-          <MDBRow>
-            <MDBCol>
-              <Link to="/">
-                <img style={{ width: '175px' }} src={logo} alt="logo" />
-              </Link>
-            </MDBCol>
-            <MDBCol className="mx-auto mb-4 text-center">
-              <Link to="/about" className="text-uppercase fw-bold mb-4">
-                About
-              </Link>
-              <br></br>
-              <br></br>
-              <Link to="/tutorial" className="text-uppercase fw-bold mb-4">
-                How it Works
-              </Link>
-              <br></br>
-              <br></br>
-              <a
-                href="https://github.com/Lortiz528/GameSwitch"
-                className="text-uppercase fw-bold mb-4"
-              >
-                Project source Code
-              </a>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-      </section>
-    </MDBFooter>
+    <footer className='footer'>
+      <div className='footer-container'>
+        <div className='footer-item'>
+          <Link to='/about'>
+            <h4>About Us</h4>
+          </Link>
+        </div>
+        {/* <div className='footer-item'>
+          <h4>Contact Us</h4>
+        </div> */}
+        <div className='footer-item'>
+          <Link to='/tutorial'>
+            <h4>How It Works</h4>
+          </Link>
+        </div>
+        <div className='footer-item'>
+          <a href='https://github.com/liliwu8/GameSwitch'>
+            <h4> Project Source Code</h4>
+          </a>
+        </div>
+      </div>
+      <p className='copyright'>Copyright ©2022 Game Switch NYC</p>
+    </footer>
   );
 }

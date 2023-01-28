@@ -85,6 +85,7 @@ function Login() {
   }
 
   return (
+    <div>
     <section className='login'>
       <h2 className='login-text'>Login</h2>
       <br />
@@ -132,7 +133,8 @@ function Login() {
       </button> */}
 
       {/* <hr /> */}
-    </section>
+      </section>
+      </div>
   )
 }
 

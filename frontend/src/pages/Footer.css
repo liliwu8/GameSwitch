@@ -1,0 +1,29 @@
+.footer {
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+ 
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-item {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+}
+
+.copyright {
+  background-color: #f1f1f1;
+
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+}
