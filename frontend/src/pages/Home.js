@@ -19,23 +19,21 @@ function Home() {
         <div className='feature'>
           <h2 className='feature-title'>Game</h2>
           <p className='feature-description'>
-            Creating your own gaming libaray to trade with local users. Allowing
-            users to view and manage the games they own physical.
+            Create your own gaming library to trade with local users. View and manage your library.
           </p>
         </div>
         <div className='feature'>
           <h2 className='feature-title'>Connect</h2>
           <p className='feature-description'>
-            Users can connect with local peers by trading video games and
-            meeting up in person. Connecting with like-minded users with the
-            same interest.
+            Connect with local peers and trading video games or
+            meet up in person. Connect with like-minded users.
           </p>
         </div>
         <div className='feature'>
-          <h2 className='feature-title'>Repeat</h2>
+          <h2 className='feature-title'>Trade</h2>
           <p className='feature-description'>
-            Trading games through other users can be a great way to get rid of
-            games they no longer want, while also acquiring new games to play.
+            Trading games with other users can be a great way to get rid of
+            games you no longer want, and expand your library while saving money.
           </p>
         </div>
       </div>
