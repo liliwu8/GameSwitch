@@ -1,19 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 //import from firebase
 //import { onAuthStateChanged } from "firebase/auth";
 //import auth from "../firebaseTest/firebaseAuth";
-import axios from 'axios'
-import { CurrentUserContext } from './CurrentUserContext'
-import { useContext } from 'react'
-import { Card, Container, Image } from 'react-bootstrap'
-import './UserProfile.css'
-import GetTradeScore from '../tradeRequestRecords/getTradeScore'
+import axios from 'axios';
+import { CurrentUserContext } from './CurrentUserContext';
+import { useContext } from 'react';
+import { Card, Container, Image } from 'react-bootstrap';
+import './UserProfile.css';
+import GetTradeScore from '../tradeRequestRecords/getTradeScore';
 
-const API = process.env.REACT_APP_API_URL //localhost:3333
+const API = process.env.REACT_APP_API_URL; //localhost:3333
 
 export default function UserProfile() {
-  const { currentUser } = useContext(CurrentUserContext)
+  const { currentUser } = useContext(CurrentUserContext);
   // console.log(currentUser);
   // console.log(
   //   "trade score",
@@ -91,6 +91,8 @@ export default function UserProfile() {
       <button className='user-profile-button'>
         <Link to='/traderequestrecords'>Trade Records</Link>
       </button>
+      <br />
+      <br />
     </Container>
-  )
+  );
 }

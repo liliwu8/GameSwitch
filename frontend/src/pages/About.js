@@ -5,7 +5,7 @@ import linkedIn from './linked.png';
 
 function About() {
   return (
-    <div>
+    <div className='about-page'>
       <br></br>
       <h1 className='about-font'>Meet The GameSwitch Team</h1>
       <Row>

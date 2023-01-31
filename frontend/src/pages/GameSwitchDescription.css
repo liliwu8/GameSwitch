@@ -2,6 +2,7 @@
   margin-left: 3rem;
   margin-top: 2%;
   margin-right: 3rem;
+  min-height: 100vh;
 }
 
 .instructionCard {

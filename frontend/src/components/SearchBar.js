@@ -34,19 +34,23 @@ function SearchBar() {
     let filterGame = games.filter((game) =>
       game.game_name.toLowerCase().includes(userInput)
     );
-    return filterGame.length
-      ? filterGame.map((game, index) => (
-          <ul
-            className='dropdown-row'
-            key={index}
-            onClick={() => SearchHandleClick(game.game_name)}
-          >
-            <li>
-              <Link to={`/games/${game.game_id}`}>{game.game_name}</Link>
-            </li>
-          </ul>
-        ))
-      : <ul><li>No Result</li></ul>
+    return filterGame.length ? (
+      filterGame.map((game, index) => (
+        <ul
+          className='dropdown-row'
+          key={index}
+          onClick={() => SearchHandleClick(game.game_name)}
+        >
+          <li>
+            <Link to={`/games/${game.game_id}`}>{game.game_name}</Link>
+          </li>
+        </ul>
+      ))
+    ) : (
+      <ul className='dropdown-row'>
+        <li>No Result</li>
+      </ul>
+    );
   };
   return (
     <div className='search-bar'>
