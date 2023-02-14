@@ -9,11 +9,21 @@
   text-align: left;
 }
 
-.titleDes{
-    font-family: 'Press Start 2P';
+.titleDes {
+  font-family: 'Press Start 2P';
 }
 
-.tradepic{
+.tradepic {
   margin-right: 100rem;
   width: 20rem;
+}
+
+.accordion {
+ 
+  margin: 20px;
+  height:100vh;
+}
+
+.accordion-body {
+  text-align: left;
 }

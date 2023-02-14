@@ -27,5 +27,6 @@ export default function Footer() {
       </div>
       <p className='copyright'>Copyright ©2022 Game Switch NYC</p>
     </footer>
+
   );
 }
