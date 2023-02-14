@@ -51,7 +51,7 @@ function GameSwitchDescription() {
          When you make a trade,it will take you to  your trading page that you can see  your incoming trade and outgoing trade.
         </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey='2'>
+        <Accordion.Item eventKey='3'>
         <Accordion.Header>What if I cancel my trade?</Accordion.Header>
         <Accordion.Body>
         If you cancel your trade be sure its an 24 hours before the trade happens, so it won't be inconvience. 
