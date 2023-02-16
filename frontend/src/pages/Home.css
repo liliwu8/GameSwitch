@@ -80,6 +80,6 @@
 
 }
 
-/* .home{
-  height:100vh;
-} */
+.home{
+  min-height:100vh;
+}
