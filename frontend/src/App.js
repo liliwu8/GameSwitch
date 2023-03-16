@@ -1,10 +1,7 @@
 import './App.css';
 import FourOFour from './pages/FourOFour';
-// import Edit from './Pages/Edit'
 import Home from './pages/Home';
 import UsersIndex from './pages/UsersIndex';
-// import New from './Pages/New'
-// import Show from './Pages/Show'
 import About from './pages/About';
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
