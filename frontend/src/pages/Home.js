@@ -1,5 +1,8 @@
-import React from 'react';
-import './Home.css';
+import React from 'react'
+import { GrGamepad } from 'react-icons/gr'
+import { FaUserFriends } from 'react-icons/fa'
+import { FiRepeat } from "react-icons/fi";
+import './Home.css'
 
 function Home() {
   return (
@@ -18,6 +21,7 @@ function Home() {
       <div className='features-container'>
         <div className='feature'>
           <h2 className='feature-title'>Game</h2>
+          <GrGamepad size={50} />
           <p className='feature-description'>
             Create your own gaming library to trade with local users. View and
             manage your library.
@@ -25,6 +29,7 @@ function Home() {
         </div>
         <div className='feature'>
           <h2 className='feature-title'>Connect</h2>
+          <FaUserFriends size={50} />
           <p className='feature-description'>
             Connect with local peers and trading video games or meet up in
             person. Connect with like-minded users.
@@ -32,6 +37,7 @@ function Home() {
         </div>
         <div className='feature'>
           <h2 className='feature-title'>Trade</h2>
+          <FiRepeat size={50} />
           <p className='feature-description'>
             Trading games with other users can be a great way to get rid of
             games you no longer want, and expand your library while saving
@@ -41,6 +47,6 @@ function Home() {
       </div>
       {/* <img src='https://cdn.dribbble.com/users/989157/screenshots/3825479/comp-4_1.gif' className='home-image' alt='gif' /> */}
     </div>
-  );
+  )
 }
-export default Home;
+export default Home
