@@ -86,7 +86,7 @@ function About() {
             <Card.Img
               variant='top'
               src='https://i.imgur.com/L1kzkMq_d.jpg?maxwidth=520&shape=thumb&fidelity=high'
-              className='about-img'
+              id='about-img'
             />
             <Card.Body>
               <Card.Title>JuHao Chen</Card.Title>

@@ -39,7 +39,7 @@ function User() {
       <Card key={idx} className='gameCard'>
         <Link to={`/games/${game.game_id}`}>
           <Card.Img
-            className='usergameImage'
+            id='usergameImage'
             src={game.game_img}
             alt={game.game_name}
           />

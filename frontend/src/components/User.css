@@ -9,12 +9,11 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.usergameImage {
+#usergameImage {
   /* margin-top: 4rem; */
-  width: 200px !important;
-  height: 250px !important;
-  margin: 10px !important;
-  
+  width: 200px;
+  height: 250px;
+  margin: 10px;
 }
 
 .gameCard {
@@ -75,11 +74,9 @@
   .userGames {
     grid-template-columns: repeat(1, 1fr);
   }
-  .usergameImage {
-  
+  #usergameImage {
     width: 10rem;
     height: 15rem;
-    
   }
   .gameCard {
     width: 14rem;
@@ -119,14 +116,11 @@
     display: grid;
     grid-column: 1;
   }
- 
 }
 
 @media (max-width: 390px) {
   .userPage {
-    
     grid-template-columns: 1fr;
-  
   }
   .userGames {
     display: grid;
