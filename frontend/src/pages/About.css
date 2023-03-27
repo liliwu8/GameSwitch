@@ -10,7 +10,7 @@
 
 .about-img{
   margin-top: 1rem;
-  width: 16rem;
+  width: 16rem !important;
   margin-left: 1.5rem;
 }
 

@@ -61,7 +61,7 @@ function SearchBar() {
         placeholder='Search Games'
         className='form-input'
       />
-      <div className='dropdown'>
+      <div id='dropdown'>
         {userInput.length > 0 ? searchResult(userInput) : null}
       </div>
     </div>

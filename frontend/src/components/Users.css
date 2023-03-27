@@ -10,7 +10,7 @@
 }
 
 .dropdown-userLocation {
-  width: 15rem;
+  width: 15rem !important;
   text-align: center;
   margin: auto;
   margin-top: 1%;
@@ -18,8 +18,8 @@
 }
 
 .userrow {
-  margin-left: 4.8%;
-  margin-top: 1%;
+  margin-left: 4.8% !important;
+  margin-top: 1% !important;
   animation-duration: 1.8s;
   animation-name: fadeInBottom;
 }
