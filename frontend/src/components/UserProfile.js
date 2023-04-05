@@ -76,19 +76,19 @@ export default function UserProfile() {
       </Card>
       <br />
 
-      <button className='user-profile-button'>
+      <button id='user-profile-button'>
         <Link to='/resetpassword'>Reset Password</Link>
       </button>
 
-      <button className='user-profile-button'>
+      <button id='user-profile-button'>
         <Link to='/updateprofile'>Update Profile</Link>
       </button>
 
-      <button className='user-profile-button'>
+      <button id='user-profile-button'>
         <Link to='/gamecollection'>Game Collection</Link>
       </button>
 
-      <button className='user-profile-button'>
+      <button id='user-profile-button'>
         <Link to='/traderequestrecords'>Trade Records</Link>
       </button>
       <br />

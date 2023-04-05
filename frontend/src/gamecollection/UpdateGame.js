@@ -133,10 +133,10 @@ function UpdateGame() {
           <br />
         </div>
 
-        <input className='update-button' type='submit' value='Update Game' />
+        <input id='update-button' type='submit' value='Update Game' />
       </Form>
       <br/>
-      <button className='update-button'><Link to='/gamecollection'>Go Back</Link></button>
+      <button id='update-button'><Link to='/gamecollection'>Go Back</Link></button>
     </div>
   )
 }

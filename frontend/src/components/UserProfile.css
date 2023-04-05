@@ -4,7 +4,7 @@
   margin-top: 26px;
 }
 
-.user-profile-button {
+#user-profile-button {
   background-color: #5383ec;
   font-weight: bold;
   border-radius: 8px;
@@ -14,10 +14,11 @@
   margin-left: 2rem;
   margin-top: 1rem;
 }
-.user-profile-button a {
+#user-profile-button a {
   color: white;
+  text-decoration: none;
 }
 
-.user-profile-button:hover{
+#user-profile-button:hover{
     background-color:#654AEB ;
 }
