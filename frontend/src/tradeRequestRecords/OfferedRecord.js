@@ -93,15 +93,15 @@ export default function OfferedRecord({
   return (
     <Card style={{ width: '20rem', textAlign: 'left' }}>
       <Card.Body>
-        <Card.Title>Trade Offer Date: {formatDate(dateString)}</Card.Title>
+        <Card.Title>Sent Date: {formatDate(dateString)}</Card.Title>
         <h5>Trade Status: {offeredRequest.trade_success}</h5>
         <Card.Title>
-          {offeredRequest.offer_name} Complete Status:{' '}
-          {offerInfo.trade_complete_from_offerer ? 'True' : 'false'}
+          {offeredRequest.offer_name} Trade Status:{' '}
+          {offerInfo.trade_complete_from_offerer ? 'accept' : '⏳'}
         </Card.Title>
         <Card.Title>
-          {offeredRequest.receiver_name} Complete Status:{' '}
-          {offerInfo.trade_complete_from_receiver ? 'True' : 'false'}
+          {offeredRequest.receiver_name} Trade Status:{' '}
+          {offerInfo.trade_complete_from_receiver ? 'accept' : '⏳'}
         </Card.Title>
         <Card.Text>
           <span>{`${offeredRequest.offer_name} Offered `}</span>

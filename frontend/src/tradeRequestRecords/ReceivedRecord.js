@@ -6,6 +6,7 @@ import axios from 'axios'
 import { setLogLevel } from 'firebase/app'
 import { Card, Row, Container, Button } from 'react-bootstrap'
 import { toast, ToastContainer } from 'react-toastify'
+import './ReceivedRecord.css'
 
 const API = process.env.REACT_APP_API_URL //localhost:3333
 

@@ -1,0 +1,17 @@
+$font-title:'Press Start 2P';
+
+.inbox-title  {
+    margin-top: 1.5rem;
+    font-family: $font-title;
+    font-size: 2rem;
+    .tradeCards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+}
+.outbox-title {
+    margin-top: 1.5rem;
+    font-family: $font-title;
+    font-size: 2rem;
+
+   }

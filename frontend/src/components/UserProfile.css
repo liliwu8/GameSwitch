@@ -22,3 +22,10 @@
 #user-profile-button:hover{
     background-color:#654AEB ;
 }
+
+.username {
+  margin-top: 2rem;
+  font-family: 'Press Start 2P';
+  font-size: 2rem;
+  margin-bottom: 5rem;
+}

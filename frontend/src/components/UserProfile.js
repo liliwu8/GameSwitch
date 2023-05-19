@@ -23,7 +23,7 @@ export default function UserProfile() {
 
   return (
     <Container>
-      <h2 className='pixel-font'>{`${currentUser.user_name}'s Profile`}</h2>
+      <h1 className='username'>{`${currentUser.user_name}'s Profile`}</h1>
       <Card style={{ width: '20rem' }} className='userprofile'>
         <Card.Body>
           <Card.Title>{currentUser.user_name}</Card.Title>

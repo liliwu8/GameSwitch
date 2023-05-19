@@ -31,7 +31,8 @@
   width: 100vw;
   height: 70vh;
   object-fit: cover;
-  filter: brightness(0.5);
+  /* filter: brightness(0.5); */
+ 
 }
 
 .hero-header-text {

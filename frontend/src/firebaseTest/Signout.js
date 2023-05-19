@@ -12,10 +12,12 @@ export default function SignOut() {
 
   const userSignOut = () => {
     signOut(auth)
+   
       .then((cred) => {
         currentUser.setCurrentUser("");
         console.log(cred);
         alert("user signed out", cred);
+       
         navigate("/");
       })
       .catch((error) => {
@@ -23,10 +25,11 @@ export default function SignOut() {
         alert(error.message);
       });
   };
-
+  
   return (
-    <button className='signout' onClick={userSignOut}>
+    <li onClick={userSignOut}>
       Sign Out
-    </button>
+    </li>
+    
   )
 }

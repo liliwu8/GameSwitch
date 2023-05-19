@@ -7,6 +7,7 @@ import { useContext } from 'react'
 import ReceivedRecord from './ReceivedRecord'
 import OfferedRecord from './OfferedRecord'
 import { Container, Button } from 'react-bootstrap'
+import './TradeRequestRecords.scss'
 
 const API = process.env.REACT_APP_API_URL //localhost:3333
 
@@ -74,23 +75,21 @@ export default function TradeRequestRecords() {
   return (
     <Container>
       <Container>
-        <h2 className='pixel-font'>Inbox</h2>
+        <h1 className='inbox-title'>Inbox</h1>
         <Container className='tradeCards'>
           {displayTradeReceivedRecord(requests)}
         </Container>
       </Container>
       <hr />
       <Container>
-        <h2 className='pixel-font'>Outbox</h2>
+        <h1 className='outbox-title'>Outbox</h1>
         <Container className='tradeCards'>
           {displayTradeOfferedRecord(offers)}
         </Container>
       </Container>
-
       <Link to='/userprofile'>
-        <Button>Go Back</Button>
+        <button>Go Back</button>
       </Link>
     </Container>
   )
 }
-

@@ -3,9 +3,9 @@ import './UsersIndex.css'
 function UsersIndex() {
   return (
     <div className='Index'>
-      <h2 className='title'>
+      <h1 className='title'>
         Meet Our Game Switchers!
-      </h2>
+      </h1>
       <Users/>
     </div>
   )

@@ -26,7 +26,6 @@ function SearchBar() {
 
   const SearchHandleClick = (input) => {
     setUserInput(input);
-    // console.log('input is', input)
     setUserInput('');
   };
 
@@ -42,12 +41,12 @@ function SearchBar() {
           onClick={() => SearchHandleClick(game.game_name)}
         >
           <li>
-            <Link to={`/games/${game.game_id}`}>{game.game_name}</Link>
+            <Link to={`/games/${game.game_id}`}> <img src={game.game_img} style={{width:'37px'}} />{game.game_name} </Link>
           </li>
         </ul>
       ))
     ) : (
-      <ul className='dropdown-row'>
+      <ul className='dropdown-row-no-result'>
         <li>No Result</li>
       </ul>
     );
