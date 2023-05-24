@@ -51,7 +51,9 @@ export default function Footer() {
               <li>About Us</li>
             </Link>
             <li>
-              <a href='#'>Contact</a>
+              <a href='https://github.com/liliwu8/GameSwitch'>
+                Project Source Code
+              </a>
             </li>
             <Link to='/tutorial'>
               <li>How It Works</li>
