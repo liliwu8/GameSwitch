@@ -34,7 +34,7 @@ export default function Footer() {
         <img src={logo} className='footer__logo' />
         <h2>Contact</h2>
         <address>
-          5534 NYC 22193-10212
+          1234 Midtown Manhattan NYC 10001-10001
           <br />
           <a className='footer__btn' href='mailto:example@gmail.com'>
             Email Us
