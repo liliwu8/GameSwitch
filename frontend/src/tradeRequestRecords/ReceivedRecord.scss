@@ -1,0 +1,32 @@
+.tradingBox {
+    display: flex;
+    &__offerer {
+        margin-right:50px ;
+    }
+    &__img{
+        width:100px;
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    // &__icon{
+    //     font-size: 100px;
+       
+    // }
+  
+}
+// .buttons{
+// display: flex;
+// flex-direction: row;
+// justify-content: left;
+// //    &__accept{
+// //         margin-right: 50px;
+
+// //     }
+// }
+
+.complete-button {
+    margin-top: 10px;
+}
+
+

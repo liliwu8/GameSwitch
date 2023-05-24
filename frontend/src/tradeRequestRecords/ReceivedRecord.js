@@ -1,19 +1,18 @@
 import React from 'react'
-import SignOut from '../firebaseTest/Signout'
 import { Link, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
-import { setLogLevel } from 'firebase/app'
-import { Card, Row, Container, Button } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 import { toast, ToastContainer } from 'react-toastify'
-import './ReceivedRecord.css'
+import './ReceivedRecord.scss'
+import { MdOutlineSync } from 'react-icons/md'
 
 const API = process.env.REACT_APP_API_URL //localhost:3333
 
 export default function ReceivedRecord({ receivedRequest }) {
   const [status, setStatus] = useState(receivedRequest.trade_success)
   const [request, setRequest] = useState(receivedRequest)
-  const [temp, setTemp]= useState('')
+  const [temp, setTemp] = useState('')
   const navigate = useNavigate()
   const accept = () => {
     const acceptRequest = {}
@@ -56,7 +55,7 @@ export default function ReceivedRecord({ receivedRequest }) {
 
   const completeTrade = () => {
     receivedRequest.trade_complete_from_receiver = true
-    
+
     if (receivedRequest.trade_complete_from_offerer === true) {
       receivedRequest.trade_success = 'Completed'
       //swap games here
@@ -108,59 +107,88 @@ export default function ReceivedRecord({ receivedRequest }) {
     }, 3100)
   }
   return (
-    <Card style={{ width: '20rem', textAlign: 'left' }}>
+    <Card style={{ width: '20rem', textAlign: 'left', margin: '6px' }}>
       <Card.Body>
-        <Card.Title>Trade Offer Date: {formatDate(dateString)}</Card.Title>
+        <Card.Title> Date: {formatDate(dateString)}</Card.Title>
         <h5>Trade Status: {status}</h5>
         <Card.Title>
           {receivedRequest.offer_name} Complete Status:{' '}
-          {request.trade_complete_from_offerer ? 'True' : 'false'}
+          {request.trade_complete_from_offerer ? 'accept' : '⏳'}
         </Card.Title>
         <Card.Title>
           {receivedRequest.receiver_name} Complete Status:{' '}
-          {request.trade_complete_from_receiver ? 'True' : 'false'}
+          {request.trade_complete_from_receiver ? 'accept' : '⏳'}
         </Card.Title>
-        <Card.Text>
-          <span>{`${receivedRequest.offer_name} Offered `}</span>
-          <span>
-            <Link
-              to={`/games/${receivedRequest.trade_offerer_game_id}`}
-            >{`${receivedRequest.offerer_game_name} `}</Link>
-            {'for '}
-          </span>
-          <span>{`${receivedRequest.receiver_name}'s Copy of `}</span>
-          <span>
-            <Link
-              to={`/games/${receivedRequest.trade_receiver_game_id}`}
-            >{`${receivedRequest.receiver_game_name}`}</Link>
-          </span>
-        </Card.Text>
+        {/* <Card.Text> */}
+        <div className='tradingBox'>
+          <div className='tradingBox__offerer'>
+            <p>{`${receivedRequest.offer_name} Offered `}</p>
+            <span>
+              <Link
+                to={`/games/${receivedRequest.trade_offerer_game_id}`}
+              >{`${receivedRequest.offerer_game_name} `}</Link>
+            </span>
+            <img
+              src={receivedRequest.offerer_game_img}
+              className='tradingBox__img'
+              alt='trade-pic'
+            />{' '}
+            {receivedRequest.trade_success === 'Completed' ||
+            receivedRequest.trade_complete_from_offerer === true ||
+            receivedRequest.trade_complete_from_receiver === true ? null : (
+              <Button
+                variant='primary'
+                onClick={accept}
+                className='buttons__accept'
+              >
+                Accept
+              </Button>
+            )}
+          </div>
+          {/* <MdOutlineSync classname='tradingBox__icon' /> */}
+          <div className='trading__receiver'>
+            <p>{`${receivedRequest.receiver_name}`}</p>
+            <span>
+              <Link
+                to={`/games/${receivedRequest.trade_receiver_game_id}`}
+              >{`${receivedRequest.receiver_game_name}`}</Link>
+            </span>
+            <img
+              src={receivedRequest.receiver_game_img}
+              width='100'
+              height='100'
+              alt='trade-pic'
+              className='tradingBox__img'
+            />
 
-        {receivedRequest.trade_success === 'Completed' ||
-        receivedRequest.trade_complete_from_offerer === true ||
-        receivedRequest.trade_complete_from_receiver === true ? null : (
-          <Button variant='primary' onClick={accept}>
-            Accept
-          </Button>
-        )}
-        <br></br>
-        <br></br>
+            {receivedRequest.trade_success === 'Completed' ||
+            receivedRequest.trade_complete_from_offerer === true ||
+            receivedRequest.trade_complete_from_receiver === true ? null : (
+              <Button variant='warning' onClick={reject}>
+                Reject
+              </Button>
+            )}
+          </div>
+        </div>
+        {/* </Card.Text> */}
+        {/* <div className='buttons'>
+         
+          <br></br>
+          <br></br>
 
-        {receivedRequest.trade_success === 'Completed' ||
-        receivedRequest.trade_complete_from_offerer === true ||
-        receivedRequest.trade_complete_from_receiver === true ? null : (
-          <Button variant='warning' onClick={reject}>
-            Reject
-          </Button>
-        )}
-        <br></br>
-        <br></br>
+          <br></br>
+          <br></br>
+        </div> */}
         <ToastContainer autoClose={2000} theme='light' />
         {receivedRequest.trade_success === 'pending' ||
         receivedRequest.trade_success === 'rejected' ||
         receivedRequest.trade_success === 'Completed' ? null : (
-          <Button variant='success' onClick={completeTrade}>
-            Confirm Complete Trade
+          <Button
+            variant='success'
+            onClick={completeTrade}
+            className='complete-button'
+          >
+            Complete Trade
           </Button>
         )}
       </Card.Body>

@@ -1,7 +1,6 @@
 import SearchBar from './SearchBar'
 import logo from './logo.png'
 import { Link } from 'react-router-dom'
-// import { Navbar } from 'react-bootstrap'
 import { useContext, useState } from 'react'
 import SignOut from '../firebaseTest/Signout'
 import { CurrentUserContext } from './CurrentUserContext'

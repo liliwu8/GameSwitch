@@ -73,7 +73,7 @@ export default function TradeRequestRecords() {
   // console.log(offers);
 
   return (
-    <Container>
+    <Container className='inbox'>
       <Container>
         <h1 className='inbox-title'>Inbox</h1>
         <Container className='tradeCards'>
