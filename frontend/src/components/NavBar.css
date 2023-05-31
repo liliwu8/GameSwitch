@@ -1,11 +1,12 @@
 
 .navbar {
+  position: sticky !important; 
+  top: 0; 
   background-color: #251d52;
   height: 90px;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
   padding: 0 15px !important;
-  position: fixed;
-  top: 0;
+  z-index: 9999;
 }
 
 .navbar__container {

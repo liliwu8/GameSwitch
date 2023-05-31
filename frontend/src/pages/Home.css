@@ -9,30 +9,12 @@
   font-weight: bolder;
 }
 
-/* .feature {
-  border: 3px solid black;
-} */
-
-.home-image {
-  background-image: url('https://static.standard.co.uk/2020/12/07/11/topgames2020compositejpg?width=1024&auto=webp&quality=50&crop=968%3A645%2Csmart');
-  /* margin-top: 2%; */
-  /* max-width: 100%; */
-  /* height: auto; */
-  height: 100vh;
-  width: 100%;
-  background-size: cover;
-}
-
-/* .home{
-  background-color: black;
-} */
-
 .home-image {
   width: 100vw;
-  height: 70vh;
-  object-fit: cover;
+  height: 80vh;
+  background-size: cover;
+  /* object-fit: cover; */
   /* filter: brightness(0.5); */
- 
 }
 
 .hero-header-text {
@@ -51,36 +33,102 @@
   margin-bottom: 4rem;
 }
 
-.feature-description{
+.feature-description {
   text-align: left;
 }
 
-
-.features-container{
+.features-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.feature{
+.feature {
   width: 100%;
   margin: 10px;
-  border: 2px solid black;
+  border: 4px solid #8719A2;
   padding: 20px;
+  border-radius: 20px;
+}
+
+.feature-title {
+  font-family: 'Press Start 2P';
+}
+
+.home {
+  min-height: 100vh;
+}
+
+.gameBrand-container {
+  padding-left: 12px;
+  padding-right: 12px;
+  background-color: #F2F4F7;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.gameBrand-heading {
+  font-family: Poppins, Open Sans, sans-serif;
+  font-weight: 700;
+  padding: 20px;
+}
+
+.gameBrand-heading span{
+  color:#b693eb;
+}
+
+.gameBrand-list {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
   
 }
 
-@media (min-width: 576px){
-  .feature{
+.gameBrand-nintendo {
+  width: 250px;
+  height: 150px;
+  border: 1px solid #cfd4da;
+  margin: 10px;
+  border-radius: 16px;
+  background-color: white;
+}
+.gameBrand-playstation {
+  width: 250px;
+  height: 150px;
+  border: 1px solid #cfd4da;
+  margin: 10px;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.gameBrand-xbox {
+  width: 250px;
+  height: 150px;
+  border: 1px solid #cfd4da;
+  margin: 10px;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.gameBrand-nintendo:hover {
+  border-color: black;
+  box-shadow: 0 0 1px 0 #797a80;
+}
+
+.gameBrand-playstation:hover {
+  border-color: black;
+  box-shadow: 0 0 1px 0 #797a80;
+}
+
+.gameBrand-xbox:hover {
+  border-color: black;
+  box-shadow: 0 0 1px 0 #797a80;
+}
+
+
+@media (min-width: 576px) {
+  .feature {
     width: 30%;
   }
-}
-
-.feature-title{
-  font-family: 'Press Start 2P';
-
-}
-
-.home{
-  min-height:100vh;
 }

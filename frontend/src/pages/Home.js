@@ -1,16 +1,20 @@
 import React from 'react'
 import { GrGamepad } from 'react-icons/gr'
 import { FaUserFriends } from 'react-icons/fa'
-import { FiRepeat } from "react-icons/fi";
+import { FiRepeat } from 'react-icons/fi'
 import './Home.css'
+import Nintendo from './Nintendo.png'
+import playstation from './playstation.png'
+import xbox from './xbox.png'
+import banner from './banner.jpeg'
 
 function Home() {
   return (
     <div className='home'>
-      {/* <img src='https://static.standard.co.uk/2020/12/07/11/topgames2020compositejpg?width=1024&auto=webp&quality=50&crop=968%3A645%2Csmart' className='home-image'/> */}
       <div className='banner-section'>
         <img
-          src='https://static.standard.co.uk/2020/12/07/11/topgames2020compositejpg?width=1024&auto=webp&quality=50&crop=968%3A645%2Csmart'
+          // src='https://static.standard.co.uk/2020/12/07/11/topgames2020compositejpg?width=1024&auto=webp&quality=50&crop=968%3A645%2Csmart'
+          src={banner}
           className='home-image'
           alt='pic'
         />
@@ -45,7 +49,22 @@ function Home() {
           </p>
         </div>
       </div>
-      {/* <img src='https://cdn.dribbble.com/users/989157/screenshots/3825479/comp-4_1.gif' className='home-image' alt='gif' /> */}
+      <div>
+        <div className='gameBrand-container'>
+          <h1 className='gameBrand-heading'>Top Brands.<span>Take Your Pick.</span> </h1>
+          <div className='gameBrand-list'>
+            {/* <div className='gameBrand-nintendo'> */}
+            <img src={Nintendo} alt='nintendo' className='gameBrand-nintendo' />
+            {/* </div> */}
+            <img
+              src={playstation}
+              alt='playstation'
+              className='gameBrand-playstation'
+            />
+            <img src={xbox} alt='xbox' className='gameBrand-xbox' />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

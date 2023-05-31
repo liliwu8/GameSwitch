@@ -109,9 +109,8 @@ export default function OfferedRecord({
               <Link
                 to={`/games/${offeredRequest.trade_offerer_game_id}`}
               >{`${offeredRequest.offerer_game_name} `}</Link>
-            
             </span>
-            <img src={offeredRequest.offerer_game_img} alt='pic' width={100} height={100}/>
+            <img src={offeredRequest.offerer_game_img} alt='pic'className='outbox__img'/>
           </div>
           <div>
             <p>{`${offeredRequest.receiver_name}`}</p>
@@ -120,7 +119,7 @@ export default function OfferedRecord({
                 {`${offeredRequest.receiver_game_name}`}
               </Link>
             </span>
-            <img src={offeredRequest.receiver_game_img} width={100} height={100}/>
+            <img src={offeredRequest.receiver_game_img} width={100} height={100} className='outbox__img' />
           </div>
         </div>
 

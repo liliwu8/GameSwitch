@@ -11,18 +11,6 @@ function NavBar() {
   const [openMenu, setOpenMenu] = useState(false)
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
-    onClickHandler(!openMenu) 
-  }
-
-  const onClickHandler=(openMenu)=>{
-    var content = document.querySelector("main");
-  
-    if(openMenu){
-       content.setAttribute( 'class', 'push-down' );
-  
-    }else{
-       content.setAttribute( 'class', '' );
-    }
   }
 
   return (
