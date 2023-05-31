@@ -5,6 +5,8 @@ import { useContext, useState } from 'react'
 import SignOut from '../firebaseTest/Signout'
 import { CurrentUserContext } from './CurrentUserContext'
 import './NavBar.css'
+import { HiMenu } from "react-icons/hi";
+
 
 function NavBar() {
   const { currentUser } = useContext(CurrentUserContext)
@@ -29,7 +31,7 @@ function NavBar() {
           style={{ display: 'none' }}
           onClick={toggleMenu}
         >
-          =
+          <HiMenu size={30}/>
         </div>
         {Object.keys(currentUser).length ? (
           <ul
