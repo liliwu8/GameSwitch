@@ -22,20 +22,6 @@ function Users() {
       })
   }, [])
 
-  //console.log(users)
-  // const uniqueLocation = (users) => {
-  //   let arr = [];
-  //   for (let user of users) {
-  //     if (!arr.includes(user.user_location)) {
-  //       arr.push(user.user_location);
-  //     }
-  //   }
-  //   return arr;
-  // };
-
-  // let locationsArray = uniqueLocation(users);
-  // //console.log(locationsArray)
-
   const getUsersByLocation = (users, location) => {
     if (location === 'All Locations') {
       setSelectedUsers([...users])
@@ -62,10 +48,9 @@ function Users() {
     )
   })
 
-  console.log(selectedUsers)
 
   return (
-    <Container>
+    <div>
       <Form.Select
         id='dropdown-userLocation'
         onChange={(e) => {
@@ -82,7 +67,7 @@ function Users() {
       <Container>
         <Row id='userrow'>{allUsers}</Row>
       </Container>
-    </Container>
+    </div>
   )
 }
 

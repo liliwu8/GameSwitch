@@ -33,3 +33,10 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    margin-top: 20px;
+  }
+
+}
