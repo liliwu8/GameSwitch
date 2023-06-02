@@ -7,7 +7,7 @@ Game Switch is a platform for gamers to interact with local peers by trading vid
 
 GameSwitch NYC has a user-friendly interface.  Making an account allows you to build a profile and game collection. Our users page allows you to find and sort users by location and view their collections. See a game you like? Make a trade offer! Manage your trade offers and Watch your game collections update instantly after completing trades. Build a reputation and watch your Game Switch score increase with every trade you make!
 
-## Create An Account And Sign In
+<!-- ## Create An Account And Sign In
 [https://user-images.githubusercontent.com/96275694/213039215-35180cba-a73e-47d7-93e7-645976a11cd0.mp4](https://user-images.githubusercontent.com/96275694/213039215-35180cba-a73e-47d7-93e7-645976a11cd0.mp4
 )
 
@@ -21,7 +21,7 @@ GameSwitch NYC has a user-friendly interface.  Making an account allows you to b
 )
 
  ## Trade With Users
-[https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4](https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4)
+[https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4](https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4) -->
 
 
 ## Important Links
