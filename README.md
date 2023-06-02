@@ -7,21 +7,26 @@ Game Switch is a platform for gamers to interact with local peers by trading vid
 
 GameSwitch NYC has a user-friendly interface.  Making an account allows you to build a profile and game collection. Our users page allows you to find and sort users by location and view their collections. See a game you like? Make a trade offer! Manage your trade offers and Watch your game collections update instantly after completing trades. Build a reputation and watch your Game Switch score increase with every trade you make!
 
-<!-- ## Create An Account And Sign In
-[https://user-images.githubusercontent.com/96275694/213039215-35180cba-a73e-47d7-93e7-645976a11cd0.mp4](https://user-images.githubusercontent.com/96275694/213039215-35180cba-a73e-47d7-93e7-645976a11cd0.mp4
-)
+## Create An Account And Sign In
+[https://github.com/liliwu8/GameSwitch/assets/96275694/6d9c8809-ac4a-4ac6-98c7-4216afd0aad4](https://github.com/liliwu8/GameSwitch/assets/96275694/22af4bfa-4933-4f51-8431-b3a518e2d8a4)
+
 
 ## Add,Update,Delete Your Game Collection
-[https://user-images.githubusercontent.com/96275694/211174682-88ff6d0b-ea2c-4d6c-9f42-9e3a87cc9aca.mp4](https://user-images.githubusercontent.com/96275694/211174682-88ff6d0b-ea2c-4d6c-9f42-9e3a87cc9aca.mp4)
+[https://github.com/liliwu8/GameSwitch/assets/96275694/1cc29d5b-a60f-42d4-892d-4615aa7d14b3](https://github.com/liliwu8/GameSwitch/assets/96275694/1cc29d5b-a60f-42d4-892d-4615aa7d14b3)
 
 
 ## Check Users From Different Borough
-[https://user-images.githubusercontent.com/96275694/211174913-5123ab32-a23e-4dc4-a91c-2c1a01438f9b.mp4
-](https://user-images.githubusercontent.com/96275694/211174913-5123ab32-a23e-4dc4-a91c-2c1a01438f9b.mp4
-)
+[https://github.com/liliwu8/GameSwitch/assets/96275694/e615ecfd-dd2d-44ff-9610-264dfb60f0ca](https://github.com/liliwu8/GameSwitch/assets/96275694/e615ecfd-dd2d-44ff-9610-264dfb60f0ca)
+
 
  ## Trade With Users
-[https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4](https://user-images.githubusercontent.com/96275694/211175017-6416da27-de3b-4e3f-994d-2be026795e37.mp4) -->
+[https://github.com/liliwu8/GameSwitch/assets/96275694/eec5a44e-ef46-495b-9b27-9c619c363284](https://github.com/liliwu8/GameSwitch/assets/96275694/eec5a44e-ef46-495b-9b27-9c619c363284)
+
+## Search a Game 
+[https://github.com/liliwu8/GameSwitch/assets/96275694/9b764fb6-2867-4a1d-a23f-b44a362d3157](https://github.com/liliwu8/GameSwitch/assets/96275694/9b764fb6-2867-4a1d-a23f-b44a362d3157)
+
+
+
 
 
 ## Important Links
