@@ -3,7 +3,7 @@ import { signOut } from "firebase/auth";
 import { CurrentUserContext } from "../components/CurrentUserContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import './Signout.css'
+import './Signout.scss'
 
 export default function SignOut() {
   const currentUser = useContext(CurrentUserContext);

@@ -1,5 +1,7 @@
 .biocard {
-  margin: 1rem;
+  margin: 0 auto;
+  max-Width: 300px;
+  margin-bottom: 30px;
 }
 
 .about-font {
@@ -14,71 +16,3 @@
   margin-left: 1.5rem;
 }
 
-.about-page {
-  min-height: 100vh;
-}
-
-@media (max-width: 1180px) {
-  #about-img {
-    margin-top: 1rem;
-    width: 16rem;
-    margin-left: 9rem;
-  }
-}
-
-@media (max-width: 912px) {
-  #about-img {
-    margin-top: 1rem;
-    width: 16rem;
-    margin-left: 5rem;
-  }
-}
-@media (max-width: 820px) {
-  .biocard {
-    margin: 2rem;
-  }
-  #about-img {
-    margin-top: 1rem;
-    width: 10rem;
-    margin-left: 1rem;
-  }
-}
-@media (max-width: 768px) {
-  #about-img {
-    margin-top: 1rem;
-    width: 16rem;
-    margin-left: 1rem;
-  }
-}
-
-@media (max-width: 414px) {
-  #about-img {
-    margin-top: 1rem;
-    width: 16rem;
-    margin-left: 3rem;
-  }
-}
-
-@media (max-width: 844px) {
-  #about-img {
-    margin-top: 1rem;
-    width: 16rem;
-    margin-left: 3rem;
-  }
-}
-
-@media (max-width: 390px) {
-  #about-img {
-    margin-top: 1rem;
-    width: 16rem;
-    margin-left: 2.5rem;
-  }
-}
-
-@media (max-width: 360px) {
-  #about-img {
-    margin-top: 1rem;
-    width: 16rem;
-    margin-left: 1.5rem;
-  }
-}
