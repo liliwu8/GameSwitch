@@ -39,16 +39,6 @@ CREATE TABLE games(
      ON DELETE CASCADE
 );
 
---create the user wishlist table
-DROP TABLE IF EXISTS wishlist;
-CREATE TABLE wishlist(
-    wishlist_game_id SERIAL PRIMARY KEY,
-    wishlist_game_name TEXT NOT NULL,
-    wishlist_game_brand TEXT,
-    wishlist_game_console TEXT,
-    user_id INTEGER NOT NULL REFERENCES users (user_id)
-     ON DELETE CASCADE
-);
 
 --create the trade request table
 DROP TABLE IF EXISTS tradeRequests;
@@ -62,4 +52,22 @@ CREATE TABLE tradeRequests(
     trade_complete_from_offerer BOOLEAN DEFAULT false,
     trade_complete_from_receiver BOOLEAN DEFAULT false,
     created_at DATE DEFAULT CURRENT_DATE
+);
+
+DROP TABLE IF EXISTS thread;
+CREATE TABLE thread(
+    thread_id serial primary key, 
+    thread_title text,
+    thread_created Date default CURRENT_DATE, 
+    thread_user_id INTEGER NOT NULL REFERENCES users (user_id),
+    thread_body text not null
+    );
+
+DROP TABLE IF EXISTS post;
+CREATE TABLE post(
+    post_id serial primary key,
+    post_content text,
+    post_created Date default CURRENT_DATE,
+    post_user_id INTEGER NOT NULL REFERENCES users (user_id),
+    post_thread_id INTEGER NOT NULL REFERENCES thread (thread_id)
 );

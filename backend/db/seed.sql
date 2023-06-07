@@ -32,6 +32,8 @@ INSERT INTO games (game_name,game_img,game_rating,game_description,game_brand,ga
 ('Super Smash Bros. Ultimate','https://media.gamestop.com/i/gamestop/10159620/Super-Smash-Bros.-Ultimate---Nintendo-Switch?fmt=auto&$pdp-gallery$', 4.8, 'Awesome game in great condition. includes case and manual.','Nintendo', 'Switch', 4),
 ('Far Cry 6','https://media.gamestop.com/i/gamestop/11103983/Far-Cry-6---Xbox-Series-X?fmt=auto&$pdp-gallery$', 4.1, 'Great condition, no scratches and has the case and manual','Xbox', 'Xbox One', 4);
 
-INSERT INTO wishlist (wishlist_game_name,wishlist_game_brand,wishlist_game_console,user_id) VALUES('Cyberpunk 2077','Playstation', 'PS4', 1),('Mario Kart 8 Deluxe','Nintendo', 'Switch', 2), ('Pokemon Sword','Nintendo', 'Switch', 3), ('Final Fantasy XV','Playstation', 'PS4', 4);
+INSERT INTO tradeRequests (trade_offerer_game_id,trade_receiver_game_id,trade_offerer_user_id,trade_receiver_user_id) VALUES(12,2,2,1),(8,20,2,3),(18,25,3,4);
 
-INSERT INTO tradeRequests (trade_offerer_game_id,trade_receiver_game_id,trade_offerer_user_id,trade_receiver_user_id) VALUES(12,2,2,1),(8,20,2,3),(18,25,3,4)
+INSERT INTO thread (thread_title, thread_user_id,thread_body) VALUES('Street Fighter 6 coming out whos playing', 1, 'whoes playing? lets sign up');
+
+INSERT INTO post (post_content, post_user_id, post_thread_id) VALUES ('I am playing when it will come out', 1, 1),('no im not playing loser',2,1);
