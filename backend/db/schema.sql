@@ -58,7 +58,7 @@ DROP TABLE IF EXISTS thread;
 CREATE TABLE thread(
     thread_id serial primary key, 
     thread_title text,
-    thread_created Date default CURRENT_DATE, 
+    thread_created TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     thread_user_id INTEGER NOT NULL REFERENCES users (user_id),
     thread_body text not null
     );
@@ -67,7 +67,7 @@ DROP TABLE IF EXISTS post;
 CREATE TABLE post(
     post_id serial primary key,
     post_content text,
-    post_created Date default CURRENT_DATE,
+    post_created TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     post_user_id INTEGER NOT NULL REFERENCES users (user_id),
-    post_thread_id INTEGER NOT NULL REFERENCES thread (thread_id)
+    post_thread_id INTEGER NOT NULL REFERENCES thread (thread_id) ON DELETE CASCADE
 );

@@ -5,14 +5,13 @@ import { useContext, useState } from 'react'
 import SignOut from '../firebaseTest/Signout'
 import { CurrentUserContext } from './CurrentUserContext'
 import './NavBar.css'
-import { HiMenu } from "react-icons/hi";
-
+import { HiMenu } from 'react-icons/hi'
 
 function NavBar() {
   const { currentUser } = useContext(CurrentUserContext)
   const [openMenu, setOpenMenu] = useState(false)
   const toggleMenu = () => {
-    setOpenMenu(!openMenu);
+    setOpenMenu(!openMenu)
   }
 
   return (
@@ -31,14 +30,13 @@ function NavBar() {
           style={{ display: 'none' }}
           onClick={toggleMenu}
         >
-          <HiMenu size={30}/>
+          <HiMenu size={30} />
         </div>
         {Object.keys(currentUser).length ? (
           <ul
             className={`navbar__menuItems ${
               openMenu ? 'navbar__menu__open' : ''
-              }`}
-            
+            }`}
           >
             <li>
               <Link to='/users'>Users</Link>
@@ -49,6 +47,9 @@ function NavBar() {
               </Link>
             </li>
             <SignOut />
+             <li>
+              <Link to='forum'>Forum</Link>
+            </li>
           </ul>
         ) : (
           <ul
@@ -64,6 +65,9 @@ function NavBar() {
             </li>
             <li>
               <Link to='signup'>Sign Up</Link>
+            </li>
+            <li>
+              <Link to='forum'>Forum</Link>
             </li>
           </ul>
         )}

@@ -34,6 +34,6 @@ INSERT INTO games (game_name,game_img,game_rating,game_description,game_brand,ga
 
 INSERT INTO tradeRequests (trade_offerer_game_id,trade_receiver_game_id,trade_offerer_user_id,trade_receiver_user_id) VALUES(12,2,2,1),(8,20,2,3),(18,25,3,4);
 
-INSERT INTO thread (thread_title, thread_user_id,thread_body) VALUES('Street Fighter 6 coming out whos playing', 1, 'whoes playing? lets sign up');
+INSERT INTO thread (thread_title, thread_user_id,thread_body) VALUES('Street Fighter 6 coming out whos playing', 1, 'whoes playing? lets sign up'),('Excited for the new update!', 2, 'Anyone else looking forward to the upcoming update?'),('Best strategies for online play', 3, 'Lets discuss the best strategies for dominating online matches.');
 
-INSERT INTO post (post_content, post_user_id, post_thread_id) VALUES ('I am playing when it will come out', 1, 1),('no im not playing loser',2,1);
+INSERT INTO post (post_content, post_user_id, post_thread_id) VALUES ('I am playing when it will come out', 1, 1),('no im not playing loser',2,1), ('Yes, I cant wait for the new update!', 2, 2), ('Me too! I hope they add some exciting features.', 4, 2), ('Im not really following the updates. Whats new?', 1, 2),('The developers have teased new characters and balancing changes.', 3, 2),('Looking forward to trying out the new characters!', 5, 2),('I find zoning strategies work well in online play.', 3, 3),('Agreed! Keeping a good spacing and controlling the match is key.', 4, 3),('What characters do you recommend for online play?', 1, 3),('Rushdown characters like Ryu and Cammy can be effective.', 2, 3),('Dont forget about strong defensive characters like Guile.', 5, 3);

@@ -1,0 +1,38 @@
+.post {
+  display: flex;
+  // align-items: flex-start;
+  margin-bottom: 20px;
+  font-weight: 400;
+  &__userAvatar {
+    float: left;
+  }
+  &__userAvatar img {
+    border-radius: 50%;
+    width: 60px;
+    margin-left:50px;
+  }
+  &__username{
+    align-self: left;
+  }
+//   &__messagesbox {
+//     // margin: 0 15px;
+//   }
+  &__messagecontainer {
+    background: violet;
+    padding: 20px;
+    border-radius: 4px;
+    // position: relative;
+    width: 300px;
+    margin-left: 20px;
+  }
+
+}
+
+.post-box{
+    text-align: left;
+    margin-top: 1.5rem;
+    
+
+}
+
+
