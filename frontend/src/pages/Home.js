@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GrGamepad } from 'react-icons/gr'
 import { FaUserFriends } from 'react-icons/fa'
 import { FiRepeat } from 'react-icons/fi'
 import './Home.css'
-import Nintendo from './Nintendo.png'
-import playstation from './playstation.png'
-import xbox from './xbox.png'
+// import Nintendo from './Nintendo.png'
+// import playstation from './playstation.png'
+// import xbox from './xbox.png'
 import banner from './banner.jpeg'
+import { Link } from 'react-router-dom'
 
 function Home() {
+  const [thread, setThread] = useState()
+
+  useEffect(() => {
+    
+  },[])
+
   return (
     <div className='home'>
       <div className='banner-section'>
@@ -50,12 +57,16 @@ function Home() {
         </div>
       </div>
       <div>
-        <div className='gameBrand-container'>
-          <h1 className='gameBrand-heading'>Top Brands.<span>Take Your Pick.</span> </h1>
+        <div className='join-banner'>
+          Join The Community <Link to='/forum'>Forum</Link>
+        </div>
+        {/* <div className='gameBrand-container'>
+          <h1 className='gameBrand-heading'>
+            Top Brands.<span>Take Your Pick.</span>{' '}
+          </h1>
           <div className='gameBrand-list'>
-            {/* <div className='gameBrand-nintendo'> */}
             <img src={Nintendo} alt='nintendo' className='gameBrand-nintendo' />
-            {/* </div> */}
+
             <img
               src={playstation}
               alt='playstation'
@@ -63,6 +74,11 @@ function Home() {
             />
             <img src={xbox} alt='xbox' className='gameBrand-xbox' />
           </div>
+        </div> */}
+      </div>
+      <div>
+        <div>
+
         </div>
       </div>
     </div>

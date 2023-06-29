@@ -22,10 +22,35 @@ import TradeRequestRecords from './tradeRequestRecords/TradeRequestRecords'
 import Thread from './components/Thread'
 import Footer from './pages/Footer'
 import Forum from './components/Forum'
+import { useEffect } from 'react'
+import axios from 'axios'
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+const API = process.env.REACT_APP_API_URL //localhost:3333
 
 function App() {
   //stores the user info throughout the whole app
   const [currentUser, setCurrentUser] = useState({})
+  const auth = getAuth();
+  
+  useEffect(() => {
+    const userSession = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const email = user.email;
+        axios
+          .get(`${API}/users/${email}`)
+          .then((res) => {
+            setCurrentUser(res.data.payload);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+       
+      } else {
+        setCurrentUser({});
+      }
+      return () => userSession();
+    })
+  },[auth])
 
   return (
     <div className='App'>

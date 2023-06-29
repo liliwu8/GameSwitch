@@ -1,0 +1,36 @@
+.post {
+    display: flex;
+    margin-bottom: 20px;
+    font-weight: 400;
+   
+    &__userAvatar img {
+      border-radius: 50%;
+      width: 60px;
+      margin-left:50px;
+      @media screen and (max-width:400px) {
+        width: 30px;
+        margin-left: 0;
+      }
+    }
+  
+    &__message{
+      width:80%;
+    }
+ 
+    &__messagecontainer {
+      background: white;
+      padding: 20px;
+      border-radius: 4px;
+      margin-left: 20px;
+      text-align: left;
+    }
+    &__messagecontent{
+      margin-top: 10px;
+    }
+    &__icons{
+      margin-top: 10px;
+    }
+    &__editicon{
+      margin-right: 20px;
+    }
+  }

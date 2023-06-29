@@ -126,6 +126,21 @@
   box-shadow: 0 0 1px 0 #797a80;
 }
 
+.join-banner{
+   width: 100vw; 
+  /* height: 100vh;  */
+  height: 80px;
+  background-color: #5452DF;
+  font-size: 60px;
+  color: white;
+  animation-direction: normal;
+  
+}
+
+.join-banner a{
+text-decoration: none;
+color: #5A0EE4;
+}
 
 @media (min-width: 576px) {
   .feature {

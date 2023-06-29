@@ -7,6 +7,7 @@ import { Card, Row, Container, Button } from 'react-bootstrap'
 import { toast, ToastContainer } from 'react-toastify'
 import './OfferedRecord.scss'
 
+
 const API = process.env.REACT_APP_API_URL //localhost:3333
 
 export default function OfferedRecord({
@@ -90,7 +91,7 @@ export default function OfferedRecord({
     setOfferInfo(offeredRequest)
   }
   return (
-    <Card style={{ width: '20rem', textAlign: 'left' }}>
+    <Card style={{ width: '20rem', textAlign: 'left' }}className='card-offer'>
       <Card.Body>
         <Card.Title>Sent Date: {formatDate(dateString)}</Card.Title>
         <h5>Trade Status: {offeredRequest.trade_success}</h5>

@@ -7,6 +7,7 @@ import { useContext } from 'react'
 import ReceivedRecord from './ReceivedRecord'
 import OfferedRecord from './OfferedRecord'
 import { Container, Button } from 'react-bootstrap'
+import { RiArrowGoBackFill } from 'react-icons/ri'
 import './TradeRequestRecords.scss'
 
 const API = process.env.REACT_APP_API_URL //localhost:3333
@@ -87,9 +88,11 @@ export default function TradeRequestRecords() {
           {displayTradeOfferedRecord(offers)}
         </Container>
       </Container>
-      <Link to='/userprofile'>
-        <button>Go Back</button>
-      </Link>
+      <button className='goBackButton'>
+        <Link to='/userprofile'>
+          <RiArrowGoBackFill size={30} />
+        </Link>
+      </button>
     </Container>
   )
 }

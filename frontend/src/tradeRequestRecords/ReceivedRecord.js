@@ -145,7 +145,6 @@ export default function ReceivedRecord({ receivedRequest }) {
               </Button>
             )}
           </div>
-          {/* <MdOutlineSync classname='tradingBox__icon' /> */}
           <div className='trading__receiver'>
             <p>{`${receivedRequest.receiver_name}`}</p>
             <span>
@@ -170,15 +169,6 @@ export default function ReceivedRecord({ receivedRequest }) {
             )}
           </div>
         </div>
-        {/* </Card.Text> */}
-        {/* <div className='buttons'>
-         
-          <br></br>
-          <br></br>
-
-          <br></br>
-          <br></br>
-        </div> */}
         <ToastContainer autoClose={2000} theme='light' />
         {receivedRequest.trade_success === 'pending' ||
         receivedRequest.trade_success === 'rejected' ||

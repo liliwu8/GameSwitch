@@ -1,14 +1,18 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import PostForm from './PostForm'
+import { CurrentUserContext } from './CurrentUserContext'
+import PostThreadForm from './PostThreadForm'
+import axios from 'axios'
+import ThreadPost from './ThreadPost'
 import './Thread.scss'
+
 const API = process.env.REACT_APP_API_URL
 
 function Thread() {
   const [thread, setThread] = useState([])
   const { threadId } = useParams()
 
+  const { currentUser } = useContext(CurrentUserContext)
   useEffect(() => {
     axios
       .get(`${API}/thread/${threadId}`)
@@ -21,20 +25,6 @@ function Thread() {
       })
   }, [threadId])
 
-  function convertToEST(dateString) {
-    const date = new Date(dateString)
-    const options = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-      timeZone: 'America/New_York',
-    }
-    return date.toLocaleString('en-US', options)
-  }
-
   function getMinutesAgo(timeString) {
     const currentTime = new Date()
     const pastTime = new Date(timeString)
@@ -42,44 +32,73 @@ function Thread() {
     const diffInMinutes = Math.floor(diffInMilliseconds / (1000 * 60))
     return diffInMinutes
   }
-  // {reviews.map((review, idx) => (
-  //   <Review
-  //     idx={idx}
-  //     reviewer={review.reviewer}
-  //     key={review.id}
-  //     review={review}
-  //     handleDelete={handleDelete}
-  //     handleSubmit={handleEdit}
-  //     loggedUser={loggedUser}
-  //   />
+
+  const handleEdit = (updatedpost) => {
+    axios
+      .put(`${API}/post/updatepost/${threadId}`, updatedpost)
+      .then((res) => {
+        console.log(res)
+        let data = res.data.payload.sort((a, b) => a.post_id - b.post_id)
+        setThread(data)
+      })
+      .catch((c) => console.warn('catch', c))
+  }
+
+  const handleSubmit = (post) => {
+    axios
+      .post(`${API}/post/newpost`, {
+        ...post,
+        post_user_id: currentUser.user_id,
+        post_thread_id: threadId,
+      })
+      .then((res) => {
+        let data = res.data.payload.sort((a, b) => a.post_id - b.post_id)
+        setThread(data)
+      })
+      .catch((error) => console.log(error))
+  }
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`${API}/post/deletepost/${id}`)
+      .then(
+        (res) => {
+          const copyThreadArray = [...thread]
+          const indexDeletedThread = copyThreadArray.findIndex((thread) => {
+            return thread.post_id === id
+          })
+          copyThreadArray.splice(indexDeletedThread, 1)
+          setThread(copyThreadArray)
+        },
+        (error) => console.error(error)
+      )
+      .catch((c) => console.warn('catch', c))
+  }
+  console.log(currentUser.username)
   return (
     <div className='post-box'>
       {thread[0] && (
         <div>
           <h1>{thread[0].thread_title}</h1>
           {thread.map((thread) => (
-            <div key={thread.thread_id} className='post'>
-              <div className='post__userAvatar'>
-                <img src={thread.user_avatar} alt='avatar' />
-              </div>
-              <div className='post__message'>
-                <div class='post__messagecontainer'>
-                  <div className='post__username'>{thread.user_name}</div>
-                  <article className='post__messagesbox'>
-                    <p className='post__messagecontent'>
-                      {thread.post_content}
-                    </p>
-                  </article>
-                  <div>{convertToEST(thread.post_created)}</div>
-                  <button>editPost</button>
-                </div>
-              </div>
-            </div>
+            <ThreadPost
+              thread={thread}
+              handleSubmit={handleEdit}
+              handleDelete={handleDelete}
+            />
           ))}
-          <div>
-            <Link to='/login'>please sign in</Link>
-          </div>
-          <PostForm setThread={setThread} threadId={threadId} />
+        </div>
+      )}
+      {currentUser.user_name ? (
+        <PostThreadForm
+          setThread={setThread}
+          threadId={threadId}
+          handleSubmit={handleSubmit}
+        />
+      ) : (
+        <div className='post-box__login'>
+            <button className='post-box__loginButton'><Link to='/login'>Please Login </Link></button>
+         
         </div>
       )}
     </div>

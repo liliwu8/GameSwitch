@@ -45,7 +45,6 @@ function Login() {
     )
       .then((cred) => {
         const email = cred.user.email
-        //console.log(email);
         setUserInfo(email)
         //console.log(cred);
         // alert("you have logged in", cred);
@@ -126,13 +125,6 @@ function Login() {
           <Link to='/signup'>Sign Up</Link>
         </span>
       </p>
-      {/* <SignOut /> */}
-      {/* <button>
-        {' '}
-        <Link to='/'>Home</Link>
-      </button> */}
-
-      {/* <hr /> */}
       </section>
       </div>
   )

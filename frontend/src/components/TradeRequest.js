@@ -46,10 +46,7 @@ function TradeRequest({
 
   const receiverUserId = currentGameInfo.user_id
   const receiverGameId = currentGameInfo.game_id
-  // console.log('currentuserId:', currentUser.user_id)
-  // console.log('currentuser gameid', selectGame)
-  // console.log('reciever userid:', receiverUserId)
-  // console.log('receiver gameid', receiverGameId)
+ 
   const handleClick = () => {
     let allId = {}
     allId.trade_offerer_user_id = currentUser.user_id
