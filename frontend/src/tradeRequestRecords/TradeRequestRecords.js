@@ -21,7 +21,6 @@ export default function TradeRequestRecords() {
     axios
       .get(`${API}/trades/${currentUser.user_id}/received`)
       .then((res) => {
-        console.log(res)
         if (res.data.success) {
           setRequests(res.data.payload)
         }
@@ -50,24 +49,28 @@ export default function TradeRequestRecords() {
   function displayTradeReceivedRecord(requests) {
     if (requests.length === 0) return []
 
-    return requests.map((request) => {
-      return <ReceivedRecord receivedRequest={request} />
-    })
+    return requests
+      .sort((a, b) => b.trade_id - a.trade_id)
+      .map((request) => {
+        return <ReceivedRecord receivedRequest={request} />
+      })
   }
 
   function displayTradeOfferedRecord(offerRecords) {
     if (offerRecords.length === 0) return []
 
-    return offerRecords.map((offerRecord, index) => {
-      return (
-        <OfferedRecord
-          index={index}
-          offeredRequest={offerRecord}
-          offers={offers}
-          setOffers={setOffers}
-        />
-      )
-    })
+    return offerRecords
+      .sort((a, b) => b.trade_id - a)
+      .map((offerRecord, index) => {
+        return (
+          <OfferedRecord
+            index={index}
+            offeredRequest={offerRecord}
+            offers={offers}
+            setOffers={setOffers}
+          />
+        )
+      })
   }
 
   // console.log(requests);

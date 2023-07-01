@@ -47,7 +47,7 @@ export default function OfferedRecord({
   const completeTrade = () => {
     offeredRequest.trade_complete_from_offerer = true
     //setOfferInfo(offeredRequest)
-    console.log('offeredRequest', offeredRequest)
+    // console.log('offeredRequest', offeredRequest)
 
     if (offeredRequest.trade_complete_from_receiver === true) {
       offeredRequest.trade_success = 'Completed'
@@ -69,12 +69,12 @@ export default function OfferedRecord({
 
     //setOfferInfo(offeredRequest)
 
-    axios
-      .put(`${API}/trades/updatetrade`, offeredRequest)
-      .then((res) => {
-        // setOfferInfo(offeredRequest);
-      })
-      .catch((error) => console.log(error))
+    // axios
+    //   .put(`${API}/trades/updatetrade`, offeredRequest)
+    //   .then((res) => {
+    //     // setOfferInfo(offeredRequest);
+    //   })
+    //   .catch((error) => console.log(error))
   }
 
   const formatDate = (dateString) => {
@@ -84,7 +84,7 @@ export default function OfferedRecord({
 
   let dateString = offeredRequest.created_at
 
-  console.log('offered made', offeredRequest)
+  // console.log('offered made', offeredRequest)
 
   function completion() {
     completeTrade()

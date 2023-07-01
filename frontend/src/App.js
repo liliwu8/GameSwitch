@@ -25,6 +25,7 @@ import Forum from './components/Forum'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import CreateThread from './components/CreateThread'
 const API = process.env.REACT_APP_API_URL //localhost:3333
 
 function App() {
@@ -78,6 +79,7 @@ function App() {
             />
             <Route path='/forum' element={<Forum />} />
             <Route path='/thread/:threadId' element={<Thread />} />
+            <Route path='/thread/newThread' element={<CreateThread/> } />
             <Route path='*' element={<FourOFour />} />
           </Routes>
         </main>

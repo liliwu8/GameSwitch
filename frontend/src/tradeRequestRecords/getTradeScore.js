@@ -28,5 +28,5 @@ export default function GetTradeScore({ user_id }) {
       });
   }, [user_id]);
 
-  return <div>{tradeScore}</div>;
+  return <>{tradeScore}</>;
 }

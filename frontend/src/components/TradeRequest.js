@@ -46,7 +46,7 @@ function TradeRequest({
 
   const receiverUserId = currentGameInfo.user_id
   const receiverGameId = currentGameInfo.game_id
- 
+
   const handleClick = () => {
     let allId = {}
     allId.trade_offerer_user_id = currentUser.user_id
@@ -62,7 +62,18 @@ function TradeRequest({
         playAudio()
         notify()
       })
-      .catch((error) => console.log(error))
+      .catch((error) => errorNotify())
+  }
+  const errorNotify = () => {
+    toast.error('sorry trade already exist', {
+      position: 'top-center',
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+    })
   }
   const notify = () => {
     toast.success(

@@ -1,13 +1,16 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import './Forum.scss'
+import { CurrentUserContext } from './CurrentUserContext'
 import { Link, useParams } from 'react-router-dom'
 const API = process.env.REACT_APP_API_URL
 
 const Forum = () => {
   const [users, setUsers] = useState([])
   const [thread, setThread] = useState([])
+
+  const { currentUser } = useContext(CurrentUserContext)
 
   useEffect(() => {
     axios
@@ -69,15 +72,21 @@ const Forum = () => {
                   {data.thread_title}
                 </Link>
               </td>
-              <td>
-                {matchUsertoThread(data.thread_user_id)}
-                
-              </td>
-              <td>{ convertToEST(data.thread_created).slice(0, 13)}</td>
+              <td>{matchUsertoThread(data.thread_user_id)}</td>
+              <td>{convertToEST(data.thread_created).slice(0, 13)}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      {currentUser.user_name ? (
+        <button>
+          <Link to='/thread/newthread'>Add Thread</Link>
+        </button>
+      ) : (
+        <button>
+          <Link to='/login'>please login in</Link>
+        </button>
+      )}
     </div>
     // <table>
     //   <colgroup>

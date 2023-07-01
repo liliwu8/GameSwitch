@@ -136,7 +136,7 @@ function UpdateGame() {
         <input id='update-button' type='submit' value='Update Game' />
       </Form>
       <br/>
-      <button id='update-button'><Link to='/gamecollection'>Go Back</Link></button>
+      {/* <button id='update-button'><Link to='/gamecollection'>Go Back</Link></button> */}
     </div>
   )
 }
