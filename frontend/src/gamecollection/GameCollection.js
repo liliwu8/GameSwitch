@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { CurrentUserContext } from '../components/CurrentUserContext'
 import { useContext } from 'react'
 import { FaTrashAlt, FaEdit } from 'react-icons/fa'
-import { AiTwotoneEdit } from 'react-icons/ai'
 import { Card, Container, Row, Col } from 'react-bootstrap'
 import './GameCollection.css'
 const API = process.env.REACT_APP_API_URL //localhost:3333
@@ -30,7 +28,6 @@ export default function GameCollection({ gameCollection, setGameCollection }) {
     const newGameCollection = [...gameCollection]
     newGameCollection.splice(index, 1)
 
-    //console.log(newGameCollection);
     axios
       .delete(`${API}/loggedin/${currentUser.user_id}/games/${game_id}`)
       .then((res) => {
@@ -95,7 +92,7 @@ export default function GameCollection({ gameCollection, setGameCollection }) {
           <p className='game-name'>{game.game_name}</p>
           <div className='game-editdelete'>
             <FaTrashAlt
-              className='game-update'
+              className='game-delete'
               onClick={() => {
                 deleteGame(index, game.game_id)
               }}
@@ -103,6 +100,7 @@ export default function GameCollection({ gameCollection, setGameCollection }) {
             />
 
             <FaEdit
+              className='game-update'
               size={20}
               onClick={() => navigate(`/updategame/${game.game_id}`)}
             />

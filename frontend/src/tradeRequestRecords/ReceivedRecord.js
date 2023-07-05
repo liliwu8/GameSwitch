@@ -12,7 +12,7 @@ const API = process.env.REACT_APP_API_URL //localhost:3333
 export default function ReceivedRecord({ receivedRequest }) {
   const [status, setStatus] = useState(receivedRequest.trade_success)
   const [request, setRequest] = useState(receivedRequest)
-  const [temp, setTemp] = useState('')
+
   const navigate = useNavigate()
   const accept = () => {
     const acceptRequest = {}
@@ -79,6 +79,7 @@ export default function ReceivedRecord({ receivedRequest }) {
         setRequest(res.data.payload)
       })
       .catch((error) => console.log(error))
+    navigate('/userprofile')
   }
 
   const formatDate = (dateString) => {
@@ -88,7 +89,7 @@ export default function ReceivedRecord({ receivedRequest }) {
 
   let dateString = receivedRequest.created_at
 
-  //console.log("request is", receivedRequest);
+  
   const notify = () => {
     toast.success(
       'You have accepted the trade! Please contact the user to coordinate switching games!',
@@ -106,6 +107,28 @@ export default function ReceivedRecord({ receivedRequest }) {
       navigate('/traderequestrecords')
     }, 3100)
   }
+
+  const accepting =
+    receivedRequest.trade_success === 'Completed' ||
+    receivedRequest.trade_complete_from_offerer === true ||
+    receivedRequest.trade_complete_from_receiver === true ? null : (
+      <Button variant='warning' onClick={reject}>
+        Reject
+      </Button>
+    )
+
+  const rejecting =
+    receivedRequest.trade_success === 'pending' ||
+    receivedRequest.trade_success === 'rejected' ||
+    receivedRequest.trade_success === 'Completed' ? null : (
+      <Button
+        variant='success'
+        onClick={completeTrade}
+        className='complete-button'
+      >
+        Complete Trade
+      </Button>
+    )
   return (
     <Card style={{ width: '20rem', textAlign: 'left', margin: '6px' }}>
       <Card.Body>
@@ -133,9 +156,11 @@ export default function ReceivedRecord({ receivedRequest }) {
               className='tradingBox__img'
               alt='trade-pic'
             />{' '}
-            {receivedRequest.trade_success === 'Completed' ||
-            receivedRequest.trade_complete_from_offerer === true ||
-            receivedRequest.trade_complete_from_receiver === true ? null : (
+            {receivedRequest.trade_success ===
+            'unavailable' ? null : receivedRequest.trade_success ===
+                'Completed' ||
+              receivedRequest.trade_complete_from_offerer === true ||
+              receivedRequest.trade_complete_from_receiver === true ? null : (
               <Button
                 variant='primary'
                 onClick={accept}
@@ -159,28 +184,11 @@ export default function ReceivedRecord({ receivedRequest }) {
               alt='trade-pic'
               className='tradingBox__img'
             />
-
-            {receivedRequest.trade_success === 'Completed' ||
-            receivedRequest.trade_complete_from_offerer === true ||
-            receivedRequest.trade_complete_from_receiver === true ? null : (
-              <Button variant='warning' onClick={reject}>
-                Reject
-              </Button>
-            )}
+            {receivedRequest.trade_success === 'unavailable' ? null : accepting}
           </div>
         </div>
         <ToastContainer autoClose={2000} theme='light' />
-        {receivedRequest.trade_success === 'pending' ||
-        receivedRequest.trade_success === 'rejected' ||
-        receivedRequest.trade_success === 'Completed' ? null : (
-          <Button
-            variant='success'
-            onClick={completeTrade}
-            className='complete-button'
-          >
-            Complete Trade
-          </Button>
-        )}
+        {receivedRequest.trade_success === 'unavailable' ? null : rejecting}
       </Card.Body>
     </Card>
   )

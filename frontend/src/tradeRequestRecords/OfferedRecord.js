@@ -40,7 +40,7 @@ export default function OfferedRecord({
       progress: undefined,
     })
     setTimeout(() => {
-      navigate('/gamecollection')
+      navigate('/traderequestrecords')
     }, 3100)
   }
 
@@ -61,20 +61,21 @@ export default function OfferedRecord({
       axios
         .put(`${API}/trades/swapgames`, gamesInfo)
         .then((res) => {
-          notify()
+         
           // setOfferInfo(offeredRequest)
         })
         .catch((error) => console.log(error))
     }
 
-    //setOfferInfo(offeredRequest)
+    setOfferInfo(offeredRequest)
 
-    // axios
-    //   .put(`${API}/trades/updatetrade`, offeredRequest)
-    //   .then((res) => {
-    //     // setOfferInfo(offeredRequest);
-    //   })
-    //   .catch((error) => console.log(error))
+    axios
+      .put(`${API}/trades/updatetrade`, offeredRequest)
+      .then((res) => {
+        // setOfferInfo(offeredRequest);
+      })
+      .catch((error) => console.log(error))
+      notify()
   }
 
   const formatDate = (dateString) => {
@@ -84,7 +85,7 @@ export default function OfferedRecord({
 
   let dateString = offeredRequest.created_at
 
-  // console.log('offered made', offeredRequest)
+ 
 
   function completion() {
     completeTrade()
@@ -106,27 +107,28 @@ export default function OfferedRecord({
         <div className='outbox'>
           <div className='outbox__offerer'>
             <p>{`${offeredRequest.offer_name} Offered `}</p>
-            <span>
+            <img src={offeredRequest.offerer_game_img} alt='pic' className='outbox__img' />
+            <div className='outbox__gamename'>
               <Link
                 to={`/games/${offeredRequest.trade_offerer_game_id}`}
               >{`${offeredRequest.offerer_game_name} `}</Link>
-            </span>
-            <img src={offeredRequest.offerer_game_img} alt='pic'className='outbox__img'/>
+            </div>
           </div>
           <div>
             <p>{`${offeredRequest.receiver_name}`}</p>
-            <span>
+           
+            <img src={offeredRequest.receiver_game_img} width={100} height={100} className='outbox__img' />
+            <div className='outbox__gamename'>
               <Link to={`/games/${offeredRequest.trade_receiver_game_id}`}>
                 {`${offeredRequest.receiver_game_name}`}
               </Link>
-            </span>
-            <img src={offeredRequest.receiver_game_img} width={100} height={100} className='outbox__img' />
+            </div>
           </div>
         </div>
 
         {offeredRequest.trade_success === 'accepted' ||
         offeredRequest.trade_success === 'Completed' ? null : (
-          <Button variant='light' onClick={cancel}>
+          <Button variant='light' onClick={cancel} className='submit'>
             Cancel
           </Button>
         )}
@@ -144,6 +146,7 @@ export default function OfferedRecord({
             Confirm Complete Trade
           </Button>
         )}
+        {offeredRequest.trade_success==='una'}
       </Card.Body>
       <ToastContainer autoClose={2000} theme='light' />
     </Card>

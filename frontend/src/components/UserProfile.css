@@ -1,34 +1,3 @@
-/* .userprofile {
-  width: 500px;
-  margin: auto;
-  margin-top: 26px;
-}
-
-#user-profile-button {
-  background-color: #5383ec;
-  font-weight: bold;
-  border-radius: 8px;
-  color: #fff;
-  border: none;
-  font-size: 18px;
-  margin-left: 2rem;
-  margin-top: 1rem;
-}
-#user-profile-button a {
-  color: white;
-  text-decoration: none;
-}
-
-#user-profile-button:hover{
-    background-color:#654AEB ;
-}
-
-.username {
-  margin-top: 2rem;
-  font-family: 'Press Start 2P';
-  font-size: 2rem;
-  margin-bottom: 1rem;
-} */
 
 .profile-page {
   max-width: 1100px;
@@ -50,11 +19,11 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
-  max-height: 35rem;
+  max-height: 37rem;
   max-width: 25%;
   margin-right: 40px;
-  border: 3px solid black;
   
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  
 }
 .profile-bio{
@@ -82,6 +51,33 @@
 margin: 10px;
 }
 
+.profile-resetPassword{
+margin-right: 5px;
+color: #2C2C2C;
+}
+.profile-resetPassword:hover{
+  color: #5C5C5C
+}
+.profile-updateprofile{
+  margin-right: 5px;
+  color: #2C2C2C;
+}
+.profile-updateprofile:hover{
+  color: #5C5C5C;
+}
+.profile-tradeRecords{
+  margin-right: 5px;
+  color: #2C2C2C;
+}
+.profile-tradeRecords:hover{
+  color: #5C5C5C;
+}
+.profile-addGame{
+  color: #2C2C2C;
+}
+.profile-addGame:hover{
+  color: #5C5C5C;
+}
 @media (max-width: 400px) {
   .profile-container {
     /* flex-direction: row; */
@@ -89,7 +85,6 @@ margin: 10px;
   }
 
   .user-profile {
-    margin-right: 20px;
     margin-bottom: 20px;
     max-width: 95%;
   }

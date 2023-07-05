@@ -6,6 +6,7 @@ import axios from 'axios'
 import ThreadPost from './ThreadPost'
 import './Thread.scss'
 
+
 const API = process.env.REACT_APP_API_URL
 
 function Thread() {
@@ -25,13 +26,7 @@ function Thread() {
       })
   }, [threadId])
 
-  function getMinutesAgo(timeString) {
-    const currentTime = new Date()
-    const pastTime = new Date(timeString)
-    const diffInMilliseconds = currentTime - pastTime
-    const diffInMinutes = Math.floor(diffInMilliseconds / (1000 * 60))
-    return diffInMinutes
-  }
+ 
 
   const handleEdit = (updatedpost) => {
     axios
@@ -101,6 +96,7 @@ function Thread() {
          
         </div>
       )}
+     
     </div>
   )
 }

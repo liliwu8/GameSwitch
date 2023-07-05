@@ -1,7 +1,7 @@
 //dependencies
 const express = require('express');
 
-const { getAllGames, getGame } = require('../queries/games');
+const { getAllGames, getGame ,getAllUsersByGameName } = require('../queries/games');
 
 //sub routes
 const gamesController = express.Router();
@@ -22,6 +22,15 @@ gamesController.get('/:game_id', async (req, res) => {
   const game = await getGame(game_id)
   if (game[0]) {
     res.status(200).json({ success: true, payload: game[0] })
+  } else {
+    res.status(404).json({ success: false, payload: 'no game found' })
+  }
+})
+gamesController.get('/getName/:name', async (req, res) => {
+  const{name}= req.params
+  const game = await getAllUsersByGameName(name)
+  if (game) {
+    res.status(200).json({ success: true, payload: game })
   } else {
     res.status(404).json({ success: false, payload: 'no game found' })
   }

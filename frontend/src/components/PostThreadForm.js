@@ -3,7 +3,7 @@ import './PostThread.scss'
 
 function PostForm(props) {
 const [post,setPost]= useState([])
-  const{threadDetails,threadId} = props
+  const{threadDetails} = props
  
 
   const handleTextChange = (event) => {
@@ -39,10 +39,11 @@ const [post,setPost]= useState([])
           placeholder='Enter your post...'
         />
         <br />
-        <input type='submit' value='submit' className='text__submitbutton' />
+       <button type='submit' className='text__submitbutton'>Submit</button>
       </form>
     </div>
   )
 }
+
 
 export default PostForm

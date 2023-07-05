@@ -18,31 +18,35 @@ export default function TradeRequestRecords() {
   const [offers, setOffers] = useState([])
 
   useEffect(() => {
-    axios
-      .get(`${API}/trades/${currentUser.user_id}/received`)
-      .then((res) => {
-        if (res.data.success) {
-          setRequests(res.data.payload)
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-        // navigate("/not-found");
-      })
+    if (currentUser.user_id) {
+      axios
+        .get(`${API}/trades/${currentUser.user_id}/received`)
+        .then((res) => {
+          if (res.data.success) {
+            setRequests(res.data.payload)
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          // navigate("/not-found");
+        })
+    }
   }, [])
 
   useEffect(() => {
-    axios
-      .get(`${API}/trades/${currentUser.user_id}/offered`)
-      .then((res) => {
-        if (res.data.success) {
-          setOffers(res.data.payload)
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-        // navigate("/not-found");
-      })
+    if (currentUser.user_id) {
+      axios
+        .get(`${API}/trades/${currentUser.user_id}/offered`)
+        .then((res) => {
+          if (res.data.success) {
+            setOffers(res.data.payload)
+          }
+        })
+        .catch((error) => {
+          console.log(error)
+          // navigate("/not-found");
+        })
+    }
   }, [])
 
   //display the name of receiver and offer, received and offered game name

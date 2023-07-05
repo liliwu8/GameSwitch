@@ -46,6 +46,30 @@ const getOfferedTradesByUserID = async (trade_offerer_user_id) => {
   }
 };
 
+// const createTrade = async (trade) => {
+//   const {
+//     trade_offerer_game_id,
+//     trade_receiver_game_id,
+//     trade_offerer_user_id,
+//     trade_receiver_user_id,
+//   } = trade;
+
+//   try {
+//     const addTrade = await db.one(
+//       "insert into tradeRequests (trade_offerer_game_id,trade_receiver_game_id, trade_offerer_user_id, trade_receiver_user_id) values ($1,$2,$3,$4) returning *",
+//       [
+//         trade_offerer_game_id,
+//         trade_receiver_game_id,
+//         trade_offerer_user_id,
+//         trade_receiver_user_id,
+//       ]
+//     );
+//     return addTrade;
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
+
 const createTrade = async (trade) => {
   const {
     trade_offerer_game_id,
@@ -55,8 +79,9 @@ const createTrade = async (trade) => {
   } = trade;
 
   try {
-    const addTrade = await db.one(
-      "insert into tradeRequests (trade_offerer_game_id,trade_receiver_game_id, trade_offerer_user_id, trade_receiver_user_id) values ($1,$2,$3,$4) returning *",
+    // Check if the trade already exists
+    const existingTrade = await db.oneOrNone(
+      "SELECT * FROM tradeRequests WHERE trade_offerer_game_id = $1 AND trade_receiver_game_id = $2 AND trade_offerer_user_id = $3 AND trade_receiver_user_id = $4",
       [
         trade_offerer_game_id,
         trade_receiver_game_id,
@@ -64,9 +89,27 @@ const createTrade = async (trade) => {
         trade_receiver_user_id,
       ]
     );
+
+    if (existingTrade) {
+      // Trade already exists, throw an error
+      throw Error('Trade already exists');
+    }
+
+    // Trade doesn't exist, proceed with adding the trade
+    const addTrade = await db.one(
+      "INSERT INTO tradeRequests (trade_offerer_game_id, trade_receiver_game_id, trade_offerer_user_id, trade_receiver_user_id) VALUES ($1, $2, $3, $4) RETURNING *",
+      [
+        trade_offerer_game_id,
+        trade_receiver_game_id,
+        trade_offerer_user_id,
+        trade_receiver_user_id,
+      ]
+    );
+
     return addTrade;
   } catch (error) {
     console.log(error.message);
+    
   }
 };
 

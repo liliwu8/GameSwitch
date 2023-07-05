@@ -1,12 +1,47 @@
-.text-thread {
-    width: 30%;
-    height: 200px;
-    padding: 12px 10px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: white;
-    font-size: 16px;
+// .text-thread {
+//     width: 30%;
+//     height: 200px;
+//     padding: 12px 10px;
+//     box-sizing: border-box;
+//     border: 2px solid #ccc;
+//     border-radius: 4px;
+//     background-color: white;
+//     font-size: 16px;
 
-}
+// }
+
+.createThreadForm {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  &__container {
+    margin: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+  }
+
+  &__innerContainer {
+    margin: 10px;
+  }
+    
+  &__label {
+    font-weight: bold;
+  }
+
+  &__threadTitle{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 37px;
+    width: 100%;
+  }
+  &__content {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 90px;
+    width: 100%;
+  }
+
  
+}
+
+

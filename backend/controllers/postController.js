@@ -34,7 +34,7 @@ postController.delete('/deletepost/:postid', async (req, res) => {
   const deleteOnePost = await deletePost(postid)
 
   if (deleteOnePost) {
-    res.status(200).json({sucess:true, payload:deleteOnePost})
+    res.status(200).json({success:true, payload:deleteOnePost})
   } else {
     res.status(404).json({ error: 'server error' })
   }

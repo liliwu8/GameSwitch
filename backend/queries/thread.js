@@ -3,36 +3,29 @@ const db = require('../db/dbConfig.js')
 
 const getAllThreads = async () => {
   try {
-    const allThreads = await db.any('SELECT * from thread')
+    // const allThreads = await db.any('SELECT * from thread')
+    const allThreads = await db.any(
+      'SELECT t.thread_id, t.thread_title,t.thread_body, t.thread_created, u.user_name, u.user_avatar FROM thread t JOIN users u ON t.thread_user_id = u.user_id '
+    )
     return allThreads
   } catch (error) {
     console.log(error.message)
   }
 }
 
-// SELECT u.user_name, u.user_avatar, p.post_content, p.post_created, p.post_user_id
-// FROM post p
-// JOIN users u ON p.post_user_id = u.user_id
-// WHERE p.post_thread_id = <thread_id>;
-
-
-// const getThread = async (id) => {
-//   try {
-//     const thread = await db.any('select thread.thread_body, thread.thread_title,thread.thread_created, thread.thread_id,thread.thread_user_id,post.post_user_id, post.post_created,post.post_content, post.post_id from thread join post on thread.thread_id = post.post_thread_id where thread.thread_id = $1', id)
-//     return thread
-  
-//   } catch (error) {
-//     console.log(error.message||error)
-//   }
-// }
-
 const getThread = async (id) => {
   try {
-    const firstPost = await db.any ('SELECT t.thread_id, 0 as post_id, t.thread_title, t.thread_created as post_created, t.thread_body as post_content,  u.user_name, u.user_avatar FROM thread t JOIN users u ON t.thread_user_id = u.user_id WHERE t.thread_id = $1',id)
-    const thread = await db.any('SELECT  u.user_name, u.user_avatar,p.post_id, p.post_content, p.post_created, p.post_user_id FROM post p JOIN thread t ON p.post_thread_id = t.thread_id JOIN users u ON post_user_id = u.user_id WHERE p.post_thread_id = $1', id)
-    return [...firstPost,...thread ]
+    const firstPost = await db.any(
+      'SELECT t.thread_id, 0 as post_id, t.thread_title, t.thread_created as post_created, t.thread_body as post_content,  u.user_name, u.user_avatar FROM thread t JOIN users u ON t.thread_user_id = u.user_id WHERE t.thread_id = $1',
+      id
+    )
+    const thread = await db.any(
+      'SELECT  u.user_name, u.user_avatar,p.post_id, p.post_content, p.post_created, p.post_user_id FROM post p JOIN thread t ON p.post_thread_id = t.thread_id JOIN users u ON post_user_id = u.user_id WHERE p.post_thread_id = $1',
+      id
+    )
+    return [...firstPost, ...thread]
   } catch (error) {
-    console.log(error.message||error)
+    console.log(error.message || error)
   }
 }
 
@@ -72,7 +65,7 @@ const deleteThread = async (thread_id) => {
     )
     return deleteThread
   } catch (error) {
-    console.log(error.message)
+    console.log(error.message || error)
   }
 }
 

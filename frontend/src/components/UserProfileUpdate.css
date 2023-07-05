@@ -1,38 +1,101 @@
-.userProfileUpdateForm {
-  width: 500px;
-  margin: auto;
-  z-index: 1;
-  background: #ffffff;
-  max-width: 500px;
-  margin: 25px auto 100px;
-  padding: 45px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+.updateprofile-form{
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+.updateprofile-container {
+  margin: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+  /* border: 1px solid black; */
+}
+.updateprofile-innerContainer {
+  margin: 10px;
+}
+.updateproflie-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.update-profile {
-  background-color: #1657f3;
+.updateprofile-col {
+  flex-basis: 48%;
+}
+
+.updateprofile-col-full {
+  flex-basis: 100%;
+}
+.updateprofile-username {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 37px;
+  width: 100%;
+}
+.updateprofile-facebook {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 37px;
+  width: 100%;
+}
+.updateprofile-location {
+  border-radius: 5px;
+  height: 37px;
+  width: 100%;
+  height: 37px;
+  width: 100%;
+}
+.updateprofile-avatar{
+  border-radius: 5px;
+  height: 37px;
+  width: 100%;
+  height: 37px;
+}
+.updateprofile-instagram {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 37px;
+  width: 100%;
+}
+.updateprofile-avatar{
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 37px;
+}
+.updateprofile-twitch{
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 37px;
+  width: 100%;
+}
+
+.updateprofile-label {
   font-weight: bold;
-  border-radius: 8px;
+}
+
+.updateprofile-userbio{
+  width: 100%;
+}
+
+.userprofile-submit {
+  padding: 10px 20px;
+  background-color: #007bff;
   color: #fff;
   border: none;
-  font-size: 20px;
-  margin-top: 9px;
-}
-
-.update-profile:hover {
-  background-color: #3C64EC;
-}
-
-.cancel-profile {
-  background-color: #4c42cc;
+  cursor: pointer;
+  border-radius: 5px;
   font-weight: bold;
-  border-radius: 8px;
-  color: #fff;
-  border: none;
-  font-size: 20px;
-  margin-top: 9px;
 }
 
-.cancel-profile:hover {
-  background-color: #6660cd;
+.userprofile-submit:hover {
+  
+  background-color: #477EE4;
+  
+}
+@media (max-width: 400px) {
+  .updateproflie-row {
+    display: inline;
+  }
+  .updateprofile-col {
+    margin-bottom: 15px;
+  }
 }

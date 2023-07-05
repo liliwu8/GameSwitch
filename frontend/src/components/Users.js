@@ -35,16 +35,16 @@ function Users() {
 
   const allUsers = selectedUsers.map((user, idx) => {
     return (
-      <Card className='usercard' key={idx} style={{ width: '15rem' }}>
+      <Link to={`/users/${user.user_email}`}>
+      <Card className='usercard' key={idx} style={{ width: '15rem' ,marginLeft:'35px' }}>
         <Card.Title>{user.user_name}</Card.Title>
-        <Link to={`/users/${user.user_email}`}>
           <Card.Img
             className='userImage'
             src={user.user_avatar}
             alt={user.user_name}
           />
+        </Card>
         </Link>
-      </Card>
     )
   })
 
@@ -65,7 +65,7 @@ function Users() {
         <option value={'Queens'}>Queens</option>
       </Form.Select>
       <Container>
-        <Row id='userrow'>{allUsers}</Row>
+        <Row id='userrow' md={4}>{allUsers}</Row>
       </Container>
     </div>
   )

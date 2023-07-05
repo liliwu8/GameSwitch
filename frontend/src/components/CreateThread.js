@@ -33,29 +33,35 @@ function CreateThread() {
       })
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <br />
-        <label for='thread_title'>Thread Title</label>
-        <br />
-        <input
-          type='text'
-          id='thread_title'
-          onChange={handleTextChange}
-          value={thread.thread_title}
-        />
-        <br />
-        <br />
-        <textarea
-          className='text-thread'
-          id='thread_body'
-          value={thread.thread_body}
-          onChange={handleTextChange}
-          placeholder='Enter your post...'
-        />
-        <br />
-        <input type='submit' value='Submit' />
-      </form>
+    <div className='createThreadForm'>
+      <div className='createThreadForm__container'>
+        <div className='createThreadForm__innerContainer'>
+          <form onSubmit={handleSubmit}>
+            <br />
+            <label for='thread_title' className='createThreadForm__label'>Thread Title</label>
+            <br />
+            <input
+              className='createThreadForm__threadTitle'
+              type='text'
+              id='thread_title'
+              onChange={handleTextChange}
+              value={thread.thread_title}
+            />
+            <br />
+            <br />
+            <textarea
+              className='createThreadForm__content'
+              id='thread_body'
+              value={thread.thread_body}
+              onChange={handleTextChange}
+              placeholder='Enter your post...'
+            />
+            <br />
+            <input type='submit' value='Submit' />
+          </form>
+        </div>
+      </div>
+     
     </div>
   )
 }

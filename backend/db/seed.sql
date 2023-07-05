@@ -32,7 +32,7 @@ INSERT INTO games (game_name,game_img,game_rating,game_description,game_brand,ga
 ('Super Smash Bros. Ultimate','https://media.gamestop.com/i/gamestop/10159620/Super-Smash-Bros.-Ultimate---Nintendo-Switch?fmt=auto&$pdp-gallery$', 4.8, 'Awesome game in great condition. includes case and manual.','Nintendo', 'Switch', 4),
 ('Far Cry 6','https://media.gamestop.com/i/gamestop/11103983/Far-Cry-6---Xbox-Series-X?fmt=auto&$pdp-gallery$', 4.1, 'Great condition, no scratches and has the case and manual','Xbox', 'Xbox One', 4);
 
-INSERT INTO tradeRequests (trade_offerer_game_id,trade_receiver_game_id,trade_offerer_user_id,trade_receiver_user_id) VALUES(12,2,2,1),(8,20,2,3),(18,25,3,4);
+INSERT INTO tradeRequests (trade_offerer_game_id,trade_receiver_game_id,trade_offerer_user_id,trade_receiver_user_id) VALUES(12,2,2,1),(8,20,2,4),(18,25,3,4);
 
 INSERT INTO thread (thread_title, thread_user_id,thread_body) VALUES('Street Fighter 6 coming out whos playing', 1, 'whoes playing? lets sign up'),('Excited for the new update!', 2, 'Anyone else looking forward to the upcoming update?'),('Best strategies for online play', 3, 'Lets discuss the best strategies for dominating online matches.'), ('Favorite Characters in Street Fighter 6', 1, 'Who are your favorite characters in SF6? Share your thoughts!'),('Best Strategies for Street Fighter 6', 3, 'Share your best strategies and tips for SF6! Lets level up together.');
 

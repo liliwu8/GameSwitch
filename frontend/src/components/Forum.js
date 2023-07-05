@@ -7,13 +7,12 @@ import { Link, useParams } from 'react-router-dom'
 const API = process.env.REACT_APP_API_URL
 
 const Forum = () => {
-  const [users, setUsers] = useState([])
   const [thread, setThread] = useState([])
-
   const { currentUser } = useContext(CurrentUserContext)
-
+ 
+  
   useEffect(() => {
-    axios
+       axios
       .get(`${API}/thread`)
       .then((res) => {
         setThread(res.data.payload)
@@ -23,103 +22,76 @@ const Forum = () => {
       })
   }, [])
 
-  useEffect(() => {
-    axios
-      .get(`${API}/users`)
-      .then((res) => {
-        setUsers(res.data.payload)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [])
+ 
+  
+  const formatTimeElapsed = (date) => {
+    var now = new Date() // Get the current time
+    var elapsed = now - date // Calculate the time difference in milliseconds
 
-  const matchUsertoThread = (id) => {
-    for (let user of users) {
-      if (user.user_id === id) {
-        return user.user_name
-      }
-    }
-  }
+    // Convert elapsed time to seconds, minutes, hours, days, months, and years
+    var seconds = Math.floor(elapsed / 1000)
+    var minutes = Math.floor(seconds / 60)
+    var hours = Math.floor(minutes / 60)
+    var days = Math.floor(hours / 24)
+    var months = Math.floor(days / 30.4375)
+    var years = Math.floor(months / 12)
 
-  const convertToEST = (dateString) => {
-    const date = new Date(dateString)
-    const options = {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-      timeZone: 'America/New_York',
+    // Format the elapsed time based on the highest non-zero unit
+    if (years > 0) {
+      return years + ' year' + (years > 1 ? 's' : '') + ' ago'
+    } else if (months > 0) {
+      return months + ' month' + (months > 1 ? 's' : '') + ' ago'
+    } else if (days > 0) {
+      return days + ' day' + (days > 1 ? 's' : '') + ' ago'
+    } else if (hours > 0) {
+      return hours + ' hour' + (hours > 1 ? 's' : '') + ' ago'
+    } else if (minutes > 0) {
+      return minutes + ' minute' + (minutes > 1 ? 's' : '') + ' ago'
+    } else {
+      return seconds + ' second' + (seconds > 1 ? 's' : '') + ' ago'
     }
-    return date.toLocaleString('en-US', options)
   }
 
   return (
-    <div className='forumBody'>
-      <table className='forumBody__forumtable'>
-        <tbody className='forumBody__forumTableBody'>
-          <tr>
-            <th>Thread</th>
-            <th>Author</th>
-            <th>Post Created</th>
-          </tr>
-          {thread.map((data, index) => (
-            <tr key={index} className='forumBody__info'>
-              <td>
-                <Link to={`/thread/${data.thread_id}`}>
-                  {data.thread_title}
-                </Link>
-              </td>
-              <td>{matchUsertoThread(data.thread_user_id)}</td>
-              <td>{convertToEST(data.thread_created).slice(0, 13)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {currentUser.user_name ? (
-        <button>
-          <Link to='/thread/newthread'>Add Thread</Link>
-        </button>
-      ) : (
-        <button>
-          <Link to='/login'>please login in</Link>
-        </button>
-      )}
+    <div className='forum'>
+      <div className='forum__container'>
+        <ul className='forum__cards'>
+          {thread.map((thread, index) => {
+            return (
+              <li key={index} className='forum__card'>
+                <div className='forum__content'>
+                  <img
+                    src={thread.user_avatar}
+                    alt='avatar'
+                    className='forum__avatar'
+                  />
+                  <div className='forum__contentInfo'>
+                    <div  className='forum__title'>
+                       <Link
+                      to={`/thread/${thread.thread_id}`}
+                     
+                    >
+                      {thread.thread_title}
+                    </Link>
+                    </div>
+                   
+                    <p className='forum__authorAndTime'>
+                      Posted By: {thread.user_name}
+                      <span>
+                      {' '}
+                      {formatTimeElapsed(new Date(thread.thread_created))}
+                      </span>
+                    </p>
+                    <p className='forum__postContent'>{thread.thread_body}</p>
+                  </div>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+      {currentUser.user_name ? <button className='forum__createThreadButton'><Link to='/thread/newThread'>Create Thread</Link></button> : <button className='forum__loginButton'><Link to='/login'>Please Login</Link></button>}
     </div>
-    // <table>
-    //   <colgroup>
-    //     <col className='w70p'></col>
-    //     <col className='w10p'></col>
-    //     <col className='w10p'></col>
-    //     <col className='w10p'></col>
-    //   </colgroup>
-    //   <thread>
-    //     <tr>
-    //       <th>Thread</th>
-    //       <th>author</th>
-    //       <th>Posts</th>
-    //       <th>Last Post</th>
-    //     </tr>
-    //     <tbody>
-    //       {thread.map((data, index) => (
-    //         <tr key={index}>
-    //           <td>
-    //             <Link to={`/thread/${data.thread_id}`}>
-    //               {data.thread_title}
-    //             </Link>
-    //           </td>
-    //           <td>{matchUsertoThread(data.thread_user_id)}</td>
-    //           <td>
-    //             {}
-    //           </td>
-    //         </tr>
-    //       ))}
-    //     </tbody>
-    //   </thread>
-    // </table>
   )
 }
-
 export default Forum

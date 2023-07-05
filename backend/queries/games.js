@@ -20,7 +20,19 @@ const getGame = async (id) => {
   }
 };
 
+const getAllUsersByGameName = async (game_name) => {
+  try {
+    const allUserByGameName = await db.any('SELECT game_id, user_id FROM games WHERE game_name = $1', game_name)
+    return allUserByGameName
+  } catch (error) {
+    console.log(error.message||error)
+ }
+
+}
+
+/// finding the game by name and reutnr 
 module.exports = {
   getAllGames,
   getGame,
+  getAllUsersByGameName 
 };

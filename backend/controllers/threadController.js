@@ -50,4 +50,13 @@ threadController.put('/updateThread', async (req, res) => {
   }
 })
 
+threadController.delete('/deletethread/:threadid', async (req, res) => {
+  const { threadid } = req.params
+  const deleteOneThread = await deleteThread(threadid)
+  if (deleteOneThread) {
+    res.status(200).json({ success: true, payload: deleteOneThread })
+  } else {
+    res.status(404).json({ error: 'server error' })
+  }
+})
 module.exports = threadController

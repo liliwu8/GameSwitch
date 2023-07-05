@@ -1,18 +1,31 @@
 .outbox {
+   
     display: flex;
     &__offerer{
         margin-right: 50px;
+       
+    } 
+    &__gamename{
+      
+        margin: 5px;
+    }
+    &__gamename a{
+        text-decoration: none;
     }
     &__img{
         width:100px;
         height: 100px;
         margin-top: 10px;
         margin-bottom: 10px;
+ 
     }
-   
+   .submit{
+    position:absolute;
+   }
 }
 
 .card-offer{
     margin-right: 20px;
     margin-bottom: 20px;
+    position: relative;
 }
