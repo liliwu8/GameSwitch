@@ -7,19 +7,21 @@
   font-family: 'Press Start 2P';
   margin-top: 2%;
   font-weight: bolder;
+ 
+
 }
 
 .home-image {
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   background-size: cover;
-  /* object-fit: cover; */
-  /* filter: brightness(0.5); */
+  filter: brightness(0.3);
+ 
 }
 
 .hero-header-text {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
@@ -59,7 +61,54 @@
   min-height: 100vh;
 }
 
-.gameBrand-container {
+
+
+
+
+
+/* .gamefilter-button{
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0.4em;
+  border: 2px solid #212121;
+  background-color: transparent;
+  border-radius: 10px;
+}
+.gamefilter-button:active {
+  background-color: red;
+}
+.gamefilter-cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gamefilter-card{
+  position: relative;
+  max-width: 206px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 0 auto;
+}
+
+.gamefilter-img{
+  width: 206px;
+  height: 200px;
+}
+
+.gamefilter-name{
+  font-size: 15px;
+  font-weight: 550;
+  margin: 10px;
+  text-align: center;
+} */
+/* .gameBrand-container {
   padding-left: 12px;
   padding-right: 12px;
   background-color: #F2F4F7;
@@ -109,9 +158,9 @@
   margin: 10px;
   border-radius: 16px;
   background-color: white;
-}
+} */
 
-.gameBrand-nintendo:hover {
+/* .gameBrand-nintendo:hover {
   border-color: black;
   box-shadow: 0 0 1px 0 #797a80;
 }
@@ -124,52 +173,8 @@
 .gameBrand-xbox:hover {
   border-color: black;
   box-shadow: 0 0 1px 0 #797a80;
-}
-
-/* .join-banner{
-   width: 100vw; 
-  height: 100vh; 
-  height: 80px;
-  background-color: #5452DF;
-  font-size: 60px;
-  color: white;
-  animation-direction: normal;
-  
 } */
-.forum {
-  width: 600px;
-  margin: 0 auto;
-}
 
-.thread {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.thread-link {
-  color: #007bff;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.post-amount {
-  margin-right: 10px;
-  color: #666;
-}
-
-.timestamp {
-  color: #888;
-}
-
-h1 {
-  text-align: center;
-}
-
-/* .join-banner a{
-text-decoration: none;
-color: #5A0EE4;
-} */
 
 @media (min-width: 576px) {
   .feature {

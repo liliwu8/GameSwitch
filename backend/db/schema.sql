@@ -60,7 +60,8 @@ CREATE TABLE thread(
     thread_title text,
     thread_created TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     thread_user_id INTEGER NOT NULL REFERENCES users (user_id),
-    thread_body text not null
+    thread_body text not null,
+    thread_post_count INTEGER DEFAULT 1
     );
 
 DROP TABLE IF EXISTS post;

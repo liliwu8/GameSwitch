@@ -1,63 +1,8 @@
-// table   {
-//     border-collapse: collapse;
-//     border: 1px solid black;
-//     margin: 100px;
-
-//  }
-//  table  th {
-//     border: 1px solid black;
-//     padding: 5px;
-
-//  }
-//  table  td {
-//     border: 1px solid black;
-//     padding: 5px;
-//     text-align: left;
-//  }
-
-// .forumBody {
-//   margin-top: 20px;
-//   height: 50vh;
-
-//   &__forumtable {
-//     border-collapse: collapse;
-//     margin-bottom: 10px;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-//   &__forumTableBody {
-//     display: table-row-group;
-//     vertical-align: middle;
-//     border-color: inherit;
-//   }
-//   &__forumTableBody tr {
-//     border: 2px double #4f5b66;
-//   }
-//   &__forumTableBody th {
-//     background: #a7adba;
-//     border-right: 2px double;
-//   }
-
-//   &__froumTableBody td {
-//     font-size: 12px;
-//     padding: 5px;
-//     background: #65737e;
-//     color: #c0c5ce;
-
-//   }
-//   &__info{
-//    text-align: left;
-//    width: 150px;
-//   }
-//   &__info td a{
-//    text-decoration: none;
-
-//   }
-
-// }
 
 .forum {
   padding: 10px;
+  max-width: 900px;
+  margin: 0 auto;
   @media screen and (max-width: 400px) {
     max-width: 375px;
   }
@@ -78,9 +23,10 @@
   }
   &__content {
     display: flex;
-    justify-self: start;
+    // justify-self: start;
     margin-left: 5px;
     padding: 7px;
+    flex-direction: row;
   }
   &__avatar {
     width: 70px;
@@ -94,6 +40,7 @@
   &__contentInfo {
     margin-left: 30px;
     text-align: left;
+    
     @media screen and (max-width: 400px) {
       margin-left: 15px;
     }
@@ -126,6 +73,13 @@
       text-overflow: ellipsis;
     }
   }
+  &__comments{
+    margin-left: auto;
+  }
+  &__commentIcon{
+    width: 20px;
+    height: 20px;
+  }
   &__loginButton &__createThread {
     padding-bottom: 20px;
   }
@@ -133,7 +87,8 @@
     text-decoration: none;
     color: black;
   }
-  &__loginButton &__createThread {
+  &__loginButton {
+    
     margin-bottom: 20px;
     align-items: center;
     appearance: none;
@@ -160,6 +115,7 @@
     touch-action: manipulation;
     vertical-align: top;
     white-space: nowrap;
+    
   }
 
   &__loginButton:active {

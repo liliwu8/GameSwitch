@@ -35,19 +35,18 @@ function Users() {
 
   const allUsers = selectedUsers.map((user, idx) => {
     return (
-      <Link to={`/users/${user.user_email}`}>
-      <Card className='usercard' key={idx} style={{ width: '15rem' ,marginLeft:'35px' }}>
-        <Card.Title>{user.user_name}</Card.Title>
+      <Link to={`/users/${user.user_email}`} className='user-link'>
+        <Card className='usercard' key={idx}>
+          <Card.Title>{user.user_name}</Card.Title>
           <Card.Img
             className='userImage'
             src={user.user_avatar}
             alt={user.user_name}
           />
         </Card>
-        </Link>
+      </Link>
     )
   })
-
 
   return (
     <div>
@@ -64,9 +63,13 @@ function Users() {
         <option value={'Staten Island'}>Staten Island</option>
         <option value={'Queens'}>Queens</option>
       </Form.Select>
+      {/* <div className='users-container'> */}
       <Container>
-        <Row id='userrow' md={4}>{allUsers}</Row>
+        <Row id='userrow' md={4}>
+          {allUsers}
+        </Row>
       </Container>
+      {/* </div> */}
     </div>
   )
 }

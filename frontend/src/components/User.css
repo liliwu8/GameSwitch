@@ -1,33 +1,45 @@
-.userPage {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  margin: 2rem;
-}
+/* .userPage {
 
+  max-width: 1100px !important;
+  padding: 20px ;
+}
+.user-container{
+  display: flex;
+}
+.user-img{
+  max-width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
 .userGames {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 #usergameImage {
-  /* margin-top: 4rem; */
-  width: 200px;
-  height: 250px;
-  margin: 10px;
+  width: 205px;
+  height: 200px;
+  
 }
 
 .gameCard {
-  margin: 1rem;
   box-shadow: 8px 0px 10px rgba(48, 74, 222, 0.5);
-  width: 16rem;
+  max-width: 207px !important;
+  max-height: 272px !important;
+  
 }
 
 .user-cards {
-  width: 27rem;
+  width: 24%;
   box-shadow: 8px 0px 10px rgba(128, 36, 226, 0.5);
 }
-
-.user-button {
+.usergame-title{
+  font-size: 15px !important;
+  font-weight: 550 !important;
+  margin: 10px  !important;
+} */
+/* .user-button {
   background-color: #654aeb;
   transition: 0.5s;
   font-weight: bold;
@@ -46,8 +58,8 @@
 .user-button:hover {
   background-color: #5383ec;
   color: #fff;
-}
-
+} */
+/* 
 @media (max-width: 1024px) {
   .userGames {
     grid-template-columns: repeat(2, 1fr);
@@ -65,6 +77,7 @@
     width: 15rem;
   }
 }
+
 
 @media (max-width: 896px) {
   .user-cards {
@@ -129,4 +142,4 @@
   .user-cards {
     width: 20rem;
   }
-}
+} */

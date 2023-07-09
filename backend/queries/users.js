@@ -36,7 +36,7 @@ const updateUser = async (user, email) => {
   } = user;
   try {
     const user = await db.one(
-      'update users set user_name=$1, user_location=$2,user_avatar=$3 ,user_password=$4, user_bio=$5, user_facebook=$6,user_instagram=$7, user_twitch=$8 where user_email=$9 returning *',
+      'update users set user_name=$1, user_location=$2,user_avatar=$3 ,user_password=$4, user_bio=$5,user_facebook=$6,user_instagram=$7, user_twitch=$8 where user_email=$9 returning *',
       [
         user_name,
         user_location,

@@ -42,14 +42,14 @@ function NavBar() {
               <Link to='/users'>Users</Link>
             </li>
             <li>
+              <Link to='forum'>Forum</Link>
+            </li>
+            <li>
               <Link to='/userprofile' className='userprofile'>
                 {currentUser.user_name}'s profile
               </Link>
             </li>
             <SignOut />
-             <li>
-              <Link to='forum'>Forum</Link>
-            </li>
           </ul>
         ) : (
           <ul
@@ -61,13 +61,13 @@ function NavBar() {
               <Link to='/users'>Users</Link>
             </li>
             <li>
+              <Link to='forum'>Forum</Link>
+            </li>
+            <li>
               <Link to='login'>Login</Link>
             </li>
             <li>
               <Link to='signup'>Sign Up</Link>
-            </li>
-            <li>
-              <Link to='forum'>Forum</Link>
             </li>
           </ul>
         )}

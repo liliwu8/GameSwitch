@@ -6,7 +6,7 @@ const API = process.env.REACT_APP_API_URL; //localhost:3333
 
 export default function GetTradeScore({ user_id }) {
   const [tradeScore, setTradeScore] = useState(0);
-
+  const [user, setUser] = useState([])
   useEffect(() => {
     axios
       .get(`${API}/trades`)

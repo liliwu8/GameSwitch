@@ -1,32 +1,15 @@
-/* .game {
-  margin: 16px;
-  margin-top: 5px;
-}
-.gameimg {
-  margin-top: 8px;
-  margin-left: 3px;
-}
-
-.gamerow {
-  margin-left: 95px !important;
-  margin-top: 2% !important;
-} */
-
 .game-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr) !important;
   grid-gap: 20px;
-  /* border: 1px solid black; */
 }
 .game-name {
   font-size: 15px;
   font-weight: 550;
-  margin: 10px;
+  padding: 10px;
   text-align: center;
-  margin-bottom: 30px;
 }
 .game-card {
-  /* border: 1px solid black; */
   position: relative;
   max-width: 206px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -116,8 +99,11 @@
     width: 267px;
     height: 280px;
   }
-
-  .game-update {
-    margin-left: 110px;
+  .game-editdelete {
+    
+    margin-left: 10px;
+  }
+  .game-delete{
+    margin-left: 90px;
   }
 }

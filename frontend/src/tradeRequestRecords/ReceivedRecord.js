@@ -146,16 +146,17 @@ export default function ReceivedRecord({ receivedRequest }) {
         <div className='tradingBox'>
           <div className='tradingBox__offerer'>
             <p>{`${receivedRequest.offer_name} Offered `}</p>
-            <span>
-              <Link
-                to={`/games/${receivedRequest.trade_offerer_game_id}`}
-              >{`${receivedRequest.offerer_game_name} `}</Link>
-            </span>
+            
             <img
               src={receivedRequest.offerer_game_img}
               className='tradingBox__img'
               alt='trade-pic'
             />{' '}
+            <span className='tradingBox__offererUser'>
+              <Link
+                to={`/games/${receivedRequest.trade_offerer_game_id}`}
+              >{`${receivedRequest.offerer_game_name} `}</Link>
+            </span>
             {receivedRequest.trade_success ===
             'unavailable' ? null : receivedRequest.trade_success ===
                 'Completed' ||
@@ -172,11 +173,7 @@ export default function ReceivedRecord({ receivedRequest }) {
           </div>
           <div className='trading__receiver'>
             <p>{`${receivedRequest.receiver_name}`}</p>
-            <span>
-              <Link
-                to={`/games/${receivedRequest.trade_receiver_game_id}`}
-              >{`${receivedRequest.receiver_game_name}`}</Link>
-            </span>
+           
             <img
               src={receivedRequest.receiver_game_img}
               width='100'
@@ -184,6 +181,11 @@ export default function ReceivedRecord({ receivedRequest }) {
               alt='trade-pic'
               className='tradingBox__img'
             />
+             <span className='tradingBox__receiverUser'>
+              <Link
+                to={`/games/${receivedRequest.trade_receiver_game_id}`}
+              >{`${receivedRequest.receiver_game_name}`}</Link>
+            </span>
             {receivedRequest.trade_success === 'unavailable' ? null : accepting}
           </div>
         </div>

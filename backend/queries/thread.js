@@ -1,17 +1,40 @@
 //import the db object
 const db = require('../db/dbConfig.js')
 
+// const getAllThreads = async () => {
+//   try {
+    
+//     const allThreads = await db.any(
+//       'SELECT t.thread_id, t.thread_title,t.thread_body, t.thread_created, u.user_name, u.user_avatar FROM thread t JOIN users u ON t.thread_user_id = u.user_id '
+//     )
+//     return allThreads
+//   } catch (error) {
+//     console.log(error.message)
+//   }
+// }
+
 const getAllThreads = async () => {
   try {
-    // const allThreads = await db.any('SELECT * from thread')
-    const allThreads = await db.any(
-      'SELECT t.thread_id, t.thread_title,t.thread_body, t.thread_created, u.user_name, u.user_avatar FROM thread t JOIN users u ON t.thread_user_id = u.user_id '
-    )
-    return allThreads
+    const allThreads = await db.any(`
+      SELECT 
+        t.thread_id, 
+        t.thread_title,
+        t.thread_body, 
+        t.thread_created, 
+        u.user_name, 
+        u.user_avatar,
+        COUNT(p.post_id) + 1 AS post_count
+      FROM thread t
+      JOIN users u ON t.thread_user_id = u.user_id
+      LEFT JOIN post p ON t.thread_id = p.post_thread_id
+      GROUP BY t.thread_id, u.user_name, u.user_avatar
+    `);
+    return allThreads;
   } catch (error) {
-    console.log(error.message)
+    console.log(error.message);
   }
-}
+};
+
 
 const getThread = async (id) => {
   try {

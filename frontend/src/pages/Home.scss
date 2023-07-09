@@ -1,0 +1,137 @@
+.home {
+  &__bannerSection {
+    margin-bottom: 4rem;
+  }
+
+  &__bannerImg {
+    width: 100vw;
+    height: 70vh;
+    background-color: cover;
+    filter: brightness(0.3);
+  }
+  &__headerText {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // color: #fff;
+  }
+  &__title {
+    font-size: 40px;
+    color: rgb(43, 26, 222);
+    background-image: linear-gradient(60deg, #aa23e9, #45adf7);
+    background-clip: text;
+    color: transparent;
+    font-family: 'Press Start 2P';
+    margin-top: 2%;
+    font-weight: bolder;
+  }
+
+  &__featuresContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__feature {
+    width: 100%;
+    margin: 10px;
+    border: 4px solid #8719a2;
+    padding: 20px;
+    border-radius: 20px;
+    @media (min-width: 576px) {
+      width: 30%;
+    }
+  }
+
+  &__forum {
+    padding: 10px;
+    max-width: 1350px;
+    margin-left: 40px;
+    display: flex;
+    @media screen and (max-width: 400px) {
+ 
+      display: block;
+      margin-left: auto;
+    }
+  }
+  &__forumContainer{
+    width: 900px;
+    @media screen and (max-width: 400px) {
+      max-width: 375px;
+    }
+  }
+  &__forumSection{
+    text-align: left;
+  }
+  &__featureTitle {
+    font-family: 'Press Start 2P';
+  }
+  &__featureDescription {
+    text-align: left;
+  }
+  &__forumCards {
+    margin-left: -5;
+    margin-right: -5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    list-style-type: none;
+  }
+  &__forumCard {
+    border-bottom: 1px solid #a0a0a0;
+  }
+  &__forumCard:last-child {
+    border-bottom: none;
+  }
+
+  &__forumContent {
+    display: flex;
+    margin-left: 5px;
+    padding: 7px;
+    flex-direction: row;
+  }
+  &__forumContentInfo {
+    text-align: left;
+  }
+  &__forumTitle {
+    font-size: 1.12rem;
+    font-weight: bold;
+  }
+  &__forumAuthorAndTime {
+    font-size: small;
+    color: #a0a0a0;
+    @media screen and (max-width: 400px) {
+      font-size: x-small;
+    }
+  }
+  &__forumComments{
+    margin-left: auto;
+  }
+  
+  &__topTraders{
+    margin-left: auto;
+    padding: 10px;
+  }
+  &__topTraderContainer{
+    width: 300px;
+    text-align: left;
+  }
+  &__topTraderCards{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-left: 1.8em;
+    // margin: 10px;
+    // padding: 10px;
+    // list-style-type: none;
+  }
+  &__topTraderCard{
+    padding: 5px;
+   
+
+  }
+  &__topTraderCard a{
+    text-decoration: none;
+  }
+}

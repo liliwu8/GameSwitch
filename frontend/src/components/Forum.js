@@ -1,18 +1,19 @@
 import React from 'react'
 import { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
+import { FaComments } from 'react-icons/fa'
+
 import './Forum.scss'
 import { CurrentUserContext } from './CurrentUserContext'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const API = process.env.REACT_APP_API_URL
 
 const Forum = () => {
   const [thread, setThread] = useState([])
   const { currentUser } = useContext(CurrentUserContext)
- 
-  
+
   useEffect(() => {
-       axios
+    axios
       .get(`${API}/thread`)
       .then((res) => {
         setThread(res.data.payload)
@@ -22,8 +23,6 @@ const Forum = () => {
       })
   }, [])
 
- 
-  
   const formatTimeElapsed = (date) => {
     var now = new Date() // Get the current time
     var elapsed = now - date // Calculate the time difference in milliseconds
@@ -66,31 +65,43 @@ const Forum = () => {
                     className='forum__avatar'
                   />
                   <div className='forum__contentInfo'>
-                    <div  className='forum__title'>
-                       <Link
-                      to={`/thread/${thread.thread_id}`}
-                     
-                    >
-                      {thread.thread_title}
-                    </Link>
+                    <div className='forum__title'>
+                      <Link to={`/thread/${thread.thread_id}`}>
+                        {thread.thread_title}
+                      </Link>
                     </div>
-                   
+
                     <p className='forum__authorAndTime'>
                       Posted By: {thread.user_name}
                       <span>
-                      {' '}
-                      {formatTimeElapsed(new Date(thread.thread_created))}
+                        {' '}
+                        {formatTimeElapsed(new Date(thread.thread_created))}
                       </span>
                     </p>
                     <p className='forum__postContent'>{thread.thread_body}</p>
+                   
                   </div>
+                  <div className='forum__comments'>
+                      {' '}
+                      <FaComments size={16} />
+                      <span>{thread.post_count}</span>
+                    </div>
                 </div>
               </li>
             )
           })}
         </ul>
       </div>
-      {currentUser.user_name ? <button className='forum__createThreadButton'><Link to='/thread/newThread'>Create Thread</Link></button> : <button className='forum__loginButton'><Link to='/login'>Please Login</Link></button>}
+
+      {currentUser.user_name ? (
+        <button className='forum__createThreadButton'>
+          <Link to='/thread/newThread'>Create Thread</Link>
+        </button>
+      ) : (
+        <button className='forum__loginButton'>
+          <Link to='/login'>Please Login</Link>
+        </button>
+      )}
     </div>
   )
 }

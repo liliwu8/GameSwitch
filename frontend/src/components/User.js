@@ -1,56 +1,41 @@
-import axios from 'axios';
-import './User.css';
-import { Card, Container, Image } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { CurrentUserContext } from './CurrentUserContext';
-import { useContext } from 'react';
-import GetTradeScore from '../tradeRequestRecords/getTradeScore';
-const API = process.env.REACT_APP_API_URL;
+import axios from 'axios'
+import './User.scss'
+import { Image} from 'react-bootstrap'
+import { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import { CurrentUserContext } from './CurrentUserContext'
+import { useContext } from 'react'
+import GetTradeScore from '../tradeRequestRecords/getTradeScore'
+const API = process.env.REACT_APP_API_URL
 
 function User() {
-  const { currentUser } = useContext(CurrentUserContext);
-  const [gamesVisible, setGamesVisible] = useState(false);
-  const [user, setUser] = useState([]);
-  const [userGames, setUserGames] = useState([]);
-  const { user_email } = useParams();
-  //const navigate = useNavigate();
+  const { currentUser } = useContext(CurrentUserContext)
+  const [user, setUser] = useState([])
+  const [userGames, setUserGames] = useState([])
+  const { user_email } = useParams()
 
   useEffect(() => {
     axios
       .get(`${API}/users/${user_email}`)
       .then((res) => {
-        setUser(res.data.payload);
+        setUser(res.data.payload)
       })
       .catch((err) => {
-        console.log(err);
-      });
-  }, [user_email, user.user_id]);
+        console.log(err)
+      })
+  }, [user_email, user.user_id])
 
-  const showGamesHandler = () => {
-    axios.get(`${API}/loggedin/${user.user_id}/games`).then((res) => {
-      setUserGames(res.data.payload);
-    });
-    setGamesVisible(!gamesVisible);
-  };
+  useEffect(() => {
+    axios
+      .get(`${API}/loggedin/${user.user_id}/games`)
+      .then((res) => {
+        setUserGames(res.data.payload)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
 
-  const showUserGames = userGames.map((game, idx) => {
-    return (
-      <Card key={idx} className='gameCard'>
-        <Link to={`/games/${game.game_id}`}>
-          <Card.Img
-            id='usergameImage'
-            src={game.game_img}
-            alt={game.game_name}
-          />
-        </Link>
-        <Card.Title>{game.game_name}</Card.Title>
-        <Card.Subtitle>
-          {game.game_brand}-{game.game_console}
-        </Card.Subtitle>
-      </Card>
-    );
-  });
+  }, [user.user_id])
 
   const displaySocialMediaIcons = () => {
     if (currentUser.user_name) {
@@ -59,7 +44,7 @@ function User() {
           {user.user_facebook ? (
             <a href={user.user_facebook}>
               <Image
-                style={{ width: '50px', margin: '10px' }}
+                style={{ width: '26px', margin: '10px' }}
                 src='https://i.imgur.com/YeiuX4k.png'
               />
             </a>
@@ -67,7 +52,7 @@ function User() {
           {user.user_instagram ? (
             <a href={user.user_instagram}>
               <Image
-                style={{ width: '50px', margin: '10px' }}
+                style={{ width: '26px', margin: '10px' }}
                 src='https://i.imgur.com/dTKYTwR.png'
               />
             </a>
@@ -75,55 +60,62 @@ function User() {
           {user.user_twitch ? (
             <a href={user.user_twitch}>
               <Image
-                style={{ width: '50px', margin: '10px' }}
+                style={{ width: '26px', margin: '10px' }}
                 src='https://i.imgur.com/pSgUF1Y.jpg'
               />
             </a>
           ) : null}
         </div>
-      );
+      )
     } else {
       return (
-        <Link to='/signup'>
-          Sign up or Log in to view Email and Social media
+        <Link to='/login'>
+          <button>Please Login</button>
         </Link>
-      );
+      )
     }
-  };
+  }
 
   return (
-    <Container className='userPage'>
-      <Card className='user-cards'>
-        <Card.Img src={user.user_avatar} />
-        <Card.Body>
-          <Card.Title>{user.user_name}</Card.Title>
-          <br></br>
-          <Card.Subtitle>
-            Game Switcher Score: {<GetTradeScore user_id={user.user_id} />}
-          </Card.Subtitle>
-          <br></br>
-          <Card.Subtitle>Location: {user.user_location}</Card.Subtitle>
-          <Card.Text>{user.user_bio}</Card.Text>
-          <hr></hr>
-          <Card.Subtitle>{user.user_name}'s Contact info:</Card.Subtitle>
-          <br></br>
-          {currentUser.user_name ? (
-            <Card.Subtitle>{user.user_email}</Card.Subtitle>
-          ) : null}
+    <div className='user'>
+      <div className='user__profile'>
+        <div className='user__profileContainer'>
+          <div className='user__card'>
+            <img className='user__avatar' src={user.user_avatar} alt='Avatar' />
 
-          {displaySocialMediaIcons()}
-          <br></br>
-          <button className='user-button' onClick={showGamesHandler}>
-            {!gamesVisible
-              ? `${user.user_name}'s Games`
-              : `Hide ${user.user_name}'s Games`}
-          </button>
-        </Card.Body>
-      </Card>
+            <div className='user__bio'>{user.user_bio}</div>
 
-      <div className='userGames'>{gamesVisible ? showUserGames : null}</div>
-    </Container>
-  );
+            <div className='user__location'> 📍{user.user_location}</div>
+            <div className='user__tradeGameScore'>
+              Trade Score: {<GetTradeScore user_id={user.user_id} />}
+            </div>
+            <div className='user__email'>
+              {currentUser.user_name ? user.user_email : null}
+            </div>
+            {displaySocialMediaIcons()}
+          </div>
+          <div className='user__gameCards'>
+            {userGames &&
+              userGames.map((game, index) => (
+                <div className='user__gameCard' key={index}>
+                  <Link to={`/games/${game.game_id}`}>
+                    <div>
+                      <img
+                        className='user__gameImg'
+                        src={game.game_img}
+                        alt='gamepic'
+                      />
+                    </div>
+                    <p className='user__gameName'>{game.game_name}</p>
+                  </Link>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
-export default User;
+export default User
+

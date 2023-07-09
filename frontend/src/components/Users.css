@@ -2,14 +2,17 @@
   margin: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.usercard:hover{
-  box-shadow: 0 4px 8px 0 rgba(48, 74, 222, 0.5),0 6px 20px 0 rgba(48, 74, 222, 0.5);
+.usercard:hover {
+  box-shadow: 0 4px 8px 0 rgba(48, 74, 222, 0.5),
+    0 6px 20px 0 rgba(48, 74, 222, 0.5);
+}
+
+.user-link {
+  text-decoration: none;
 }
 .userImage {
-  width: 200px;
   height: 200px;
   margin-bottom: 10px;
-  margin-left: 5px;
 }
 
 #dropdown-userLocation {
@@ -21,10 +24,10 @@
 }
 
 #userrow {
-  
   margin-top: 1%;
   animation-duration: 1.8s;
   animation-name: fadeInBottom;
+  margin: 0 60px;
 }
 
 @keyframes fadeInBottom {
@@ -41,7 +44,12 @@
   .container {
     margin-top: 20px;
   }
-  .usercard{
-    margin-left: 60px;
+
+  #userrow {
+    margin: 0;
+  }
+
+  .userImage {
+    height: 250px;
   }
 }

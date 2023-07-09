@@ -54,7 +54,7 @@ export default function TradeRequestRecords() {
     if (requests.length === 0) return []
 
     return requests
-      .sort((a, b) => b.trade_id - a.trade_id)
+      .sort((a, b) => a.trade_id - b.trade_id)
       .map((request) => {
         return <ReceivedRecord receivedRequest={request} />
       })
@@ -64,7 +64,7 @@ export default function TradeRequestRecords() {
     if (offerRecords.length === 0) return []
 
     return offerRecords
-      .sort((a, b) => b.trade_id - a)
+      .sort((a, b) => a.trade_id - b.trade_id)
       .map((offerRecord, index) => {
         return (
           <OfferedRecord
@@ -77,8 +77,8 @@ export default function TradeRequestRecords() {
       })
   }
 
-  // console.log(requests);
-  // console.log(offers);
+
+
 
   return (
     <Container className='inbox'>
@@ -95,11 +95,11 @@ export default function TradeRequestRecords() {
           {displayTradeOfferedRecord(offers)}
         </Container>
       </Container>
-      <button className='goBackButton'>
+      {/* <button className='goBackButton'>
         <Link to='/userprofile'>
           <RiArrowGoBackFill size={30} />
         </Link>
-      </button>
+      </button> */}
     </Container>
   )
 }

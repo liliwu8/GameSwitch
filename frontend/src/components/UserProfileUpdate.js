@@ -158,7 +158,8 @@ function UserProfileUpdate() {
             </div>
             <div className='updateproflie-row'>
               <div className='updateprofile-col-full'>
-                <label htmlFor='userBio'>Bio</label>
+                <label htmlFor='userBio'className='updateprofile-lable'>Bio</label>
+                <br/>
                 <textarea
                   id='user_bio'
                   placeholder='Enter bio'
