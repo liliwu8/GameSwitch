@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { CurrentUserContext } from './CurrentUserContext'
 import { useContext } from 'react'
-import GetTradeScore from '../tradeRequestRecords/getTradeScore'
 const API = process.env.REACT_APP_API_URL
 
 function User() {
@@ -87,7 +86,7 @@ function User() {
 
             <div className='user__location'> 📍{user.user_location}</div>
             <div className='user__tradeGameScore'>
-              Trade Score: {<GetTradeScore user_id={user.user_id} />}
+              Trade Score: {user.user_trade_score}
             </div>
             <div className='user__email'>
               {currentUser.user_name ? user.user_email : null}

@@ -10,27 +10,13 @@ import banner from './banner.jpeg'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import GetTradeScore from '../tradeRequestRecords/getTradeScore'
 const API = process.env.REACT_APP_API_URL
 
 function Home() {
-  // const [game, setGame] = useState([])
-  // const [selectGame, setSelectGame] = useState([])
-  // const [activeFilter, setActiveFilter] = useState('All');
+ 
   const [thread, setThread] = useState([])
   const [user, setUser] = useState([])
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${API}/games`)
-  //     .then((res) => {
-  //       setGame(res.data.payload)
-  //       setSelectGame(res.data.payload)
-  //     })
-  //     .catch((error) => {
-  //       console.log(error)
-  //     })
-  // }, [])
   useEffect(() => {
     axios
       .get(`${API}/users`)
@@ -222,7 +208,6 @@ console.log(user)
                         <div className='home__topTraderUser'>
                           <div className='home__topTraderUserContainer'>
                             {user.user_name}
-                            {/* <GetTradeScore user_id={user.user_id} /> */}
                           </div>
                         </div>
                       </Link>

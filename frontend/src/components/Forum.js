@@ -83,7 +83,7 @@ const Forum = () => {
                   </div>
                   <div className='forum__comments'>
                       {' '}
-                      <FaComments size={16} />
+                      <FaComments size={16} />{' '}
                       <span>{thread.post_count}</span>
                     </div>
                 </div>

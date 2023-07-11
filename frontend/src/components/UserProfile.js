@@ -5,7 +5,6 @@ import { CurrentUserContext } from './CurrentUserContext'
 import { useContext } from 'react'
 import { useEffect, useState } from 'react'
 import './UserProfile.css'
-import GetTradeScore from '../tradeRequestRecords/getTradeScore'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserEdit,faInbox } from '@fortawesome/free-solid-svg-icons'
 import { MdOutlineLockReset } from 'react-icons/md'
@@ -50,7 +49,7 @@ export default function UserProfile() {
               📍{currentUser.user_location}
             </div>
             <div className='profile-tradeGameScore'>
-              Trade Score: {<GetTradeScore user_id={currentUser.user_id} />}
+              Trade Score: {currentUser.user_trade_score}
             </div>
             <div className='profile-email'>{currentUser.user_email}</div>
             <div>

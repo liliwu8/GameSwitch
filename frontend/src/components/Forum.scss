@@ -23,10 +23,9 @@
   }
   &__content {
     display: flex;
-    // justify-self: start;
-    margin-left: 5px;
     padding: 7px;
     flex-direction: row;
+
   }
   &__avatar {
     width: 70px;
@@ -75,6 +74,13 @@
   }
   &__comments{
     margin-left: auto;
+    text-align: left;
+    min-width: 30px;
+    @media screen and (max-width: 400px) {
+      font-size: x-small;
+      align-self: flex-end;
+      
+    }
   }
   &__commentIcon{
     width: 20px;
