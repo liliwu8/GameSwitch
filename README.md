@@ -7,7 +7,7 @@ Game Switch is a platform for gamers to interact with local peers by trading vid
 
 GameSwitch NYC has a user-friendly interface.  Making an account allows you to build a profile and game collection. Our users page allows you to find and sort users by location and view their collections. See a game you like? Make a trade offer! Manage your trade offers and Watch your game collections update instantly after completing trades. Build a reputation and watch your Game Switch score increase with every trade you make!
 
-## Create An Account And Sign In
+<!--## Create An Account And Sign In
 [https://github.com/liliwu8/GameSwitch/assets/96275694/6d9c8809-ac4a-4ac6-98c7-4216afd0aad4](https://github.com/liliwu8/GameSwitch/assets/96275694/22af4bfa-4933-4f51-8431-b3a518e2d8a4)
 
 
@@ -23,7 +23,7 @@ GameSwitch NYC has a user-friendly interface.  Making an account allows you to b
 [https://github.com/liliwu8/GameSwitch/assets/96275694/eec5a44e-ef46-495b-9b27-9c619c363284](https://github.com/liliwu8/GameSwitch/assets/96275694/eec5a44e-ef46-495b-9b27-9c619c363284)
 
 ## Search a Game 
-[https://github.com/liliwu8/GameSwitch/assets/96275694/9b764fb6-2867-4a1d-a23f-b44a362d3157](https://github.com/liliwu8/GameSwitch/assets/96275694/9b764fb6-2867-4a1d-a23f-b44a362d3157)
+[https://github.com/liliwu8/GameSwitch/assets/96275694/9b764fb6-2867-4a1d-a23f-b44a362d3157](https://github.com/liliwu8/GameSwitch/assets/96275694/9b764fb6-2867-4a1d-a23f-b44a362d3157)-->
 
 
 
