@@ -2,12 +2,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Card, Container, Row, Form } from 'react-bootstrap'
 import './Users.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 const API = process.env.REACT_APP_API_URL
 
 function Users() {
   const [users, setUsers] = useState([])
-  //const [location, setLocation] = useState('All Locations');
+  const navigate = useNavigate()
   const [selectedUsers, setSelectedUsers] = useState([])
 
   useEffect(() => {
@@ -35,16 +35,26 @@ function Users() {
 
   const allUsers = selectedUsers.map((user, idx) => {
     return (
-      <Link to={`/users/${user.user_email}`} className='user-link'>
-        <Card className='usercard' key={idx}>
-          <Card.Title>{user.user_name}</Card.Title>
-          <Card.Img
+      // <Link to={`/users/${user.user_email}`}
+      // className='user-link'>
+      <div className='sm-12 col-md-6 col-lg-3 mb-3'>
+        <Card
+          className='usercard'
+          style={{
+            backgroundImage: `url(${user.user_avatar})`,
+          }}
+          onClick={() => navigate(`/users/${user.user_email}`)}
+        >
+          <Card.Title className=' userTitle'>{user.user_name}</Card.Title>
+
+          {/* <Card.Img
             className='userImage'
             src={user.user_avatar}
             alt={user.user_name}
-          />
+          /> */}
         </Card>
-      </Link>
+      </div>
+      // </Link>
     )
   })
 
@@ -64,10 +74,8 @@ function Users() {
         <option value={'Queens'}>Queens</option>
       </Form.Select>
       {/* <div className='users-container'> */}
-      <Container>
-        <Row id='userrow' md={4}>
-          {allUsers}
-        </Row>
+      <Container className='mt-4'>
+        <Row id='userrow'>{allUsers}</Row>
       </Container>
       {/* </div> */}
     </div>

@@ -95,11 +95,9 @@ export default function TradeRequestRecords() {
           {displayTradeOfferedRecord(offers)}
         </Container>
       </Container>
-      {/* <button className='goBackButton'>
-        <Link to='/userprofile'>
-          <RiArrowGoBackFill size={30} />
-        </Link>
-      </button> */}
     </Container>
+    // <div>
+    //   <div></div>
+    // </div>
   )
 }

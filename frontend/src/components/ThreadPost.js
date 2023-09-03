@@ -44,7 +44,7 @@ function ThreadPost({ thread, handleSubmit, handleDelete }) {
               <article className='post__messagesbox'>
                 <p className='post__messagecontent'>{thread.post_content}</p>
               </article>
-              <div>{convertToEST(thread.post_created)}</div>
+              <div className='text-muted small'>{convertToEST(thread.post_created)}</div>
               {thread.post_id !== 0 &&
                 currentUser.user_id === thread.post_user_id && (
                   <div className='post__icons'>

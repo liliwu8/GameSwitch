@@ -1,6 +1,6 @@
 import SearchBar from './SearchBar'
 import logo from './logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import SignOut from '../firebaseTest/Signout'
 import { CurrentUserContext } from './CurrentUserContext'
@@ -9,6 +9,7 @@ import { HiMenu } from 'react-icons/hi'
 
 function NavBar() {
   const { currentUser } = useContext(CurrentUserContext)
+  const navigate = useNavigate()
   const [openMenu, setOpenMenu] = useState(false)
   const toggleMenu = () => {
     setOpenMenu(!openMenu)
@@ -38,16 +39,17 @@ function NavBar() {
               openMenu ? 'navbar__menu__open' : ''
             }`}
           >
-            <li>
-              <Link to='/users'>Users</Link>
+            <li onClick={() => navigate('/users')} className='navbar__menuItem'>
+              User
             </li>
-            <li>
-              <Link to='forum'>Forum</Link>
+            <li onClick={() => navigate('/forum')} className='navbar__menuItem'>
+              Forum
             </li>
-            <li>
-              <Link to='/userprofile' className='userprofile'>
-                {currentUser.user_name}'s profile
-              </Link>
+            <li
+              className='navbar__menuItem'
+              onClick={() => navigate('/userprofile')}
+            >
+              {currentUser.user_name}'s Profile
             </li>
             <SignOut />
           </ul>
@@ -57,17 +59,20 @@ function NavBar() {
               openMenu ? 'navbar__menu__open' : ''
             }`}
           >
-            <li>
-              <Link to='/users'>Users</Link>
+            <li onClick={() => navigate('/users')} className='navbar__menuItem'>
+              Users
             </li>
-            <li>
-              <Link to='forum'>Forum</Link>
+            <li onClick={() => navigate('/forum')} className='navbar__menuItem'>
+              Forum
             </li>
-            <li>
-              <Link to='login'>Login</Link>
+            <li onClick={() => navigate('/login')} className='navbar__menuItem'>
+              Login
             </li>
-            <li>
-              <Link to='signup'>Sign Up</Link>
+            <li
+              onClick={() => navigate('/signup')}
+              className='navbar__menuItem'
+            >
+              Sign Up
             </li>
           </ul>
         )}

@@ -1,19 +1,28 @@
 .usercard {
-  margin: 20px;
+  margin: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  background-size: 85%;
+  min-height: 250px;
+  width: 220px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px;
+ 
 }
 .usercard:hover {
   box-shadow: 0 4px 8px 0 rgba(48, 74, 222, 0.5),
     0 6px 20px 0 rgba(48, 74, 222, 0.5);
+    cursor: pointer;
+
 }
 
-.user-link {
-  text-decoration: none;
+
+.userTitle {
+  color: black;
+  font-size: 20px;
 }
-.userImage {
-  height: 200px;
-  margin-bottom: 10px;
-}
+
 
 #dropdown-userLocation {
   width: 15rem;
@@ -49,7 +58,10 @@
     margin: 0;
   }
 
-  .userImage {
-    height: 250px;
-  }
+ .usercard{
+  width: 250px;
+  height: 400px;
+  background-size: 75%;
+  margin-left: 46px;
+ }
 }

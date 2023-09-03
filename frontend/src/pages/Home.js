@@ -3,9 +3,6 @@ import { FaUserFriends, FaComments } from 'react-icons/fa'
 import { FiRepeat } from 'react-icons/fi'
 import { BiTimeFive } from 'react-icons/bi'
 import './Home.scss'
-// import Nintendo from './Nintendo.png'
-// import playstation from './playstation.png'
-// import xbox from './xbox.png'
 import banner from './banner.jpeg'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -13,9 +10,18 @@ import { Link } from 'react-router-dom'
 const API = process.env.REACT_APP_API_URL
 
 function Home() {
- 
   const [thread, setThread] = useState([])
   const [user, setUser] = useState([])
+  const [game, setGame] = useState([])
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToNextSlide = () => {
+    setCurrentIndex((currentIndex + 1) % Math.ceil(game.length / 3));
+  };
+
+  const goToPrevSlide = () => {
+    setCurrentIndex((currentIndex - 1 + Math.ceil(game.length / 3)) % Math.ceil(game.length / 3));
+  };
 
   useEffect(() => {
     axios
@@ -23,7 +29,7 @@ function Home() {
       .then((res) => {
         let data = res.data.payload.sort(
           (a, b) => b.user_trade_score - a.user_trade_score
-        ) 
+        )
         setUser(data)
       })
       .catch((err) => {
@@ -42,6 +48,17 @@ function Home() {
       })
   }, [])
 
+  useEffect(() => {
+    axios
+    .get(`${API}/games`)
+    .then((res) => {
+      setGame(res.data.payload)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  },[])
+console.log(game)
   const formatTimeElapsed = (date) => {
     var now = new Date() // Get the current time
     var elapsed = now - date // Calculate the time difference in milliseconds
@@ -69,17 +86,7 @@ function Home() {
       return seconds + ' second' + (seconds > 1 ? 's' : '') + ' ago'
     }
   }
-  // const handleFilterGame = (event) => {
-  //   if (event.target.value === 'All') {
-  //     setSelectGame([...game])
-  //   } else {
-  //     let filterGame = game.filter(
-  //       (game) => game.game_brand === event.target.value
-  //     )
-  //     setSelectGame(filterGame)
-  //   }
-  // }
-console.log(user)
+
   return (
     <div className='home'>
       <div className='home__bannerSection'>
@@ -120,50 +127,28 @@ console.log(user)
           </p>
         </div>
       </div>
-      {/* <div className='gameBrand-container'>
-        <h1 className='gameBrand-heading'>
-          Top Brands.<span>Take Your Pick.</span>{' '}
-        </h1>
-        <div className='gameBrand-list'>
-          <img src={Nintendo} alt='nintendo' className='gameBrand-nintendo' />
-
-          <img
-            src={playstation}
-            alt='playstation'
-            className='gameBrand-playstation'
-          />
-          <img src={xbox} alt='xbox' className='gameBrand-xbox' />
-        </div>
-      </div> */}
-
-      {/* <div className='game-filter-container'>
-        <button className={ activeFilter ==='All'? 'gamefilter-button:active':''} value='All' onClick={(e) => handleFilterGame(e)}>
-          All
-        </button>
-        <button value='Playstation' onClick={(e) => handleFilterGame(e)}>
-          PlayStation
-        </button>
-        <button value='Xbox' onClick={(e) => handleFilterGame(e)}>
-          Xbox
-        </button>
-        <button value='Nintendo' onClick={(e) => handleFilterGame(e)}>
-          Nintendo
-        </button>
-        <div className='gamefilter-cards'>
-          {selectGame&&selectGame.map((game,index) => (
-            <div className='gamefilter-card' key={index}>
-              <div>
-                <img
-                  className='gamefilter-img'
-                  src={game.game_img}
-                  alt='gamepic'
-                />
-              </div>
-              <p className='gamefilter-name'>{game.game_name}</p>
+      {/* <div className='game-cards'>
+        {game.map((game, index) => (
+          <div className='game-card' key={index}>
+            <div>
+              <img className='game-image' src={game.game_img} alt='gamepic' />
             </div>
-          ))}
-        </div>
+            <p className='game-name'>{game.game_name}</p>
+          </div>
+        ))}
       </div> */}
+      {/* <div className="carousel">
+      <button className="carousel-button prev" onClick={goToPrevSlide}>&#10094;</button>
+      <div className="carousel-cards">
+        {game.slice(currentIndex * 3, (currentIndex + 1) * 3).map((game, index) => (
+          <div className="carousel-card" key={index}>
+            <img src={game.game_img} alt={game.game_title} />
+            <p>{game.game_name}</p>
+          </div>
+        ))}
+      </div>
+      <button className="carousel-button next" onClick={goToNextSlide}>&#10095;</button>
+    </div> */}
       <div className='home__forum'>
         <div className='home__forumContainer'>
           <h2 className='home__forumSection'>Forums</h2>
@@ -198,7 +183,6 @@ console.log(user)
         <div className='home__topTraders'>
           <div className='home__topTraderContainer'>
             <h2>Top Traders</h2>
-
             <ol className='home__topTraderCards'>
               {user
                 .map((user) => {
@@ -223,14 +207,3 @@ console.log(user)
   )
 }
 export default Home
-
-// <div className='game-cards'>
-// {gameCollection.map((game, index) => (
-//   <div className='game-card' key={index}>
-//     <div>
-//       <img className='game-image' src={game.game_img} alt='gamepic' />
-//     </div>
-//     <p className='game-name'>{game.game_name}</p>
-//   </div>
-// ))}
-// </div>

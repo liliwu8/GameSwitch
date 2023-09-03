@@ -27,7 +27,7 @@ export default function SignOut() {
   };
   
   return (
-    <li onClick={userSignOut}>
+    <li onClick={userSignOut} className="navbar__menuItem">
       Sign Out
     </li>
     
