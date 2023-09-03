@@ -46,30 +46,6 @@ const getOfferedTradesByUserID = async (trade_offerer_user_id) => {
   }
 };
 
-// const createTrade = async (trade) => {
-//   const {
-//     trade_offerer_game_id,
-//     trade_receiver_game_id,
-//     trade_offerer_user_id,
-//     trade_receiver_user_id,
-//   } = trade;
-
-//   try {
-//     const addTrade = await db.one(
-//       "insert into tradeRequests (trade_offerer_game_id,trade_receiver_game_id, trade_offerer_user_id, trade_receiver_user_id) values ($1,$2,$3,$4) returning *",
-//       [
-//         trade_offerer_game_id,
-//         trade_receiver_game_id,
-//         trade_offerer_user_id,
-//         trade_receiver_user_id,
-//       ]
-//     );
-//     return addTrade;
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
 const createTrade = async (trade) => {
   const {
     trade_offerer_game_id,
